@@ -1,10 +1,36 @@
+import java.io.*;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        String csvFile = "config.csv";
+        String line = "";
+        String cvsSplitBy = ",";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) 
+            {
+                // Usa el separador para dividir la línea en campos
+                String[] data = line.split(cvsSplitBy);
+
+                // Imprime cada campo
+                for (String field : data) {
+                    System.out.print(field + " ");
+                }
+                System.out.println();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Lector que maneja las entradas por el jugador 
         Scanner input = new Scanner(System.in);
         
-        System.out.println("Ponle un nombre a tu mascoa: ");
+        System.out.println("Ponle un nombre a tu mascota: ");
         String nombreMascota = input.nextLine();
 
         Mascota mascota = new Mascota(nombreMascota);
