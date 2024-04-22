@@ -14,7 +14,7 @@ JavaC
 ```
 javac 22
 ```
-Makes
+Make
 ```
 GNU Make 4.4.1
 Built for Windows32
@@ -23,3 +23,5 @@ License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
 ```
 
 ## Ejecución
+
+Ejecutar _make_ desde la terminal de su preferencia, esto compilará y ejecutará el programa inmediatamente.
