@@ -1,0 +1,1 @@
+class Juguete extends Item {}

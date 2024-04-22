@@ -1,0 +1,1 @@
+class Comida extends Item {}

@@ -1,0 +1,1 @@
+class Medicina extends Item {}
