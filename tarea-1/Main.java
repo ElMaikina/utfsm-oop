@@ -7,21 +7,49 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args)
     {
+        int capacidadInventario = 20;
+        Inventario inventario = new Inventario(capacidadInventario);
+
         String csvFile = "config.csv";
         String line = "";
-        String cvsSplitBy = ",";
+        String cvsSplitByComa = ",";
+        String cvsSplitBySemiColon = ";";
 
+        String nombreMascota = null;
+
+        // Lee el archivo CSV, asigna el nombre para la mascota y lee los items
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             while ((line = br.readLine()) != null) 
             {
                 // Usa el separador para dividir la línea en campos
-                String[] data = line.split(cvsSplitBy);
+                String[] data = line.split(cvsSplitByComa);
 
                 // Imprime cada campo
                 for (String field : data) {
-                    System.out.print(field + " ");
+                    if (nombreMascota == null) {
+                        nombreMascota = field;
+                    }
+                    else {
+                        String[] subdata = line.split(cvsSplitBySemiColon);
+
+                        int id = Integer.parseInt(subdata[0]);
+                        String tipo = subdata[1];
+                        String nombre = subdata[2];
+                        int cantidad = Integer.parseInt(subdata[3]);
+            
+                        switch(tipo){
+                            case "Comida":
+                                Item newComida = new Item(id, cantidad, nombre);
+                                inventario.agregarItem(newComida);
+                            case "Medicina":
+                                Item newMedicina = new Item(id, cantidad, nombre);
+                                inventario.agregarItem(newMedicina);
+                            case "Juguete":
+                                Item newJuguete = new Item(id, cantidad, nombre);
+                                inventario.agregarItem(newJuguete);
+                        }
+                    }
                 }
-                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -29,9 +57,6 @@ public class Main {
 
         // Lector que maneja las entradas por el jugador 
         Scanner input = new Scanner(System.in);
-        
-        System.out.println("Ponle un nombre a tu mascota: ");
-        String nombreMascota = input.nextLine();
 
         Mascota mascota = new Mascota(nombreMascota);
         
@@ -63,6 +88,11 @@ public class Main {
                 case "Dormir":
                     System.out.println("\nZZZZZzzZZZZzzz...\n");
                     mascota.dormir();
+                    break;
+
+                // La mascota duerme
+                case "Inventario":
+                    inventario.mostrarInventario();
                     break;
 
                 // Cualquier otro caso es invalido

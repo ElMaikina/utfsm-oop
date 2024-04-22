@@ -9,15 +9,15 @@ public class Inventario {
         this.items = new Item[capacidad];
         this.cant = 0;
     }
-    //public void agregarItem(){
-    //    if (cant < capacidad){
-    //        item[cant] = item;
-    //        cant++;
-    //    }
-    //}
+    public void agregarItem(Item item) {
+        if (cant < capacidad){
+            items[cant] = item;
+            cant++;
+        }
+    }
     public void mostrarInventario() {
         for(int i = 0; i < cant; i++) {
-            System.out.println(items[i]);
+            items[i].mostrarItem();
         }
     }
     public Item searchbyid(int id) {
