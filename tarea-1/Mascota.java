@@ -12,9 +12,9 @@ public class Mascota {
         this.nombre = nombre;
         this.edad = 0;
         this.salud = 100;
-        this.energia = 20;
+        this.energia = 100;
         this.felicidad = 50;
-        this.pedirEstado();
+        this.actualizarEstado();
     }
 
     public void mostrarMascota() {
@@ -35,14 +35,20 @@ public class Mascota {
         if      (edad<=5 && salud<=10) {felicidad -= 20;}
         else if (5<edad && edad<=10 && salud<=50) {felicidad -= 20; energia -= 10;}
         else if (edad>10 && salud<=50) {felicidad -= 30; energia -= 20;}
+
+        // Volver a calibrar las estadísticas antes de empezar el nuevo ciclo por si alguna estadística
+        // resultara quedar con valor negativo
+        if(salud<0){salud=0;}
+        if(energia<0){energia=0;}
+        if(felicidad<0){felicidad=0;}        
     }
 
-    public void pedirEstado(){
+    public void actualizarEstado(){
         // Chequear y actualizar el estado de la mascota.
         // El orden de ejecución de las condiciones respeta el orden de prioridad de los estados de mayor a menor. 
         // De esa manera se cumple que la primera condición que sea verdadera será el estado de mayor prioridad.
 
-        // MUERTO -> edad > 15 o salud = 0 o energía = 0.
+        // MUERTO -> edad >= 15 o salud = 0 o energía = 0.
         if (edad==15 || salud==0 || energia==0) {estado = Estado.MUERTO;}
 
         // CANSADO -> energia <= 15.
@@ -107,32 +113,27 @@ public class Mascota {
         if(felicidad>100){felicidad=100;}
 
         energia = 100;
-
-        edad += 0.5;
     }
 
     public void usarItem(Item item){
         // Usar item del inventario => aumenta estadísticas
-        //switch (item.tipo){
-        //    case "comida":
-        //        salud += 20;
-        //        energia += 20;
-        //        System.out.println("Dando de comer " + "item.nombre" + "...");
-        //        // dejé item.nombre como string para que no me saliera error mientras no existe item
-        //        break;           
-//
-        //    case "medicina":
-        //        salud += 40;
-        //        System.out.println("Aplicando medicamento " + "item.nombre" + "...");
-        //        break;
-//
-        //    case "juguete":
-        //        felicidad += 30;
-        //        System.out.println("Usando juguete " + "item.nombre" + "...");
-        //        break;
-        //}
-        //
-        //item.cantidad -= 1;
+        switch (item.getTipo()){
+           case "Comida":
+               salud += 20;
+               energia += 20;
+               System.out.println("\nDando de comer " + item.getNombre() + "...");
+               break;           
+
+           case "Medicina":
+               salud += 40;
+               System.out.println("\nAplicando medicamento " + item.getNombre() + "...");
+               break;
+
+           case "Juguete":
+               felicidad += 30;
+               System.out.println("\nUsando juguete " + item.getNombre() + "...");
+               break;
+        }
     }
 
     public void pasarTiempo(){

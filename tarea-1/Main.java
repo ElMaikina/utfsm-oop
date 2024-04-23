@@ -37,17 +37,8 @@ public class Main {
                         String nombre = subdata[2];
                         int cantidad = Integer.parseInt(subdata[3]);
             
-                        switch(tipo){
-                            case "Comida":
-                                Item newComida = new Item(id, cantidad, nombre);
-                                inventario.agregarItem(newComida);
-                            case "Medicina":
-                                Item newMedicina = new Item(id, cantidad, nombre);
-                                inventario.agregarItem(newMedicina);
-                            case "Juguete":
-                                Item newJuguete = new Item(id, cantidad, nombre);
-                                inventario.agregarItem(newJuguete);
-                        }
+                        Item newItem = new Item(id, tipo, nombre, cantidad);
+                        inventario.agregarItem(newItem);
                     }
                 }
             }
@@ -60,46 +51,75 @@ public class Main {
 
         Mascota mascota = new Mascota(nombreMascota);
         
-        boolean juegoHaTerminado = false;
         String siguienteJugada = "";
 
 
         // Ciclo general del juego, termina cuando el usuario escribe "Salir"
-        while (!juegoHaTerminado) {
+        while (true) {
+            mascota.pasarTiempo();
+            // Actualización de estado/estadísticas y penalización por déficit de estadísticas
+            mascota.penalizar();
+            mascota.actualizarEstado();
+            System.out.println("tiempo simulado: " + mascota.edad);
             mascota.mostrarMascota();
-            System.out.println("\n¿Que desea hacer?");
+            // Confirmar que la mascota no ha muerto
+            if(mascota.estado == Estado.MUERTO){System.out.println("\nFin de la simulación\n");break;}
+
+            // Solicitud de input
+            System.out.println("\nAcciones");
+            System.out.println("--------");
+            System.out.println("0: dormir");
+            inventario.mostrarInventario();
+            System.out.print("\nSeleccione un elemento del inventario, 'c' para continuar, y 'x' para salir: ");
             siguienteJugada = input.nextLine();
 
             // Los comandos que se aceptan por consola
             switch(siguienteJugada){
 
                 // Sale del juego
-                case "Salir":
-                    System.out.println("\nAdios!\n");
+                case "x":
+                    System.out.println("\nFin de la simulación\n");
+                    input.close();
                     return;
 
-                // Pasa el tiempo
-                case "Continuar":
-                    System.out.println("\nContinuando...\n");
-                    mascota.pasarTiempo();
+                // Continuar
+                case "c":
+                    System.out.println("\nPasa el tiempo...");
                     break;
 
                 // La mascota duerme
-                case "Dormir":
-                    System.out.println("\nZZZZZzzZZZZzzz...\n");
+                case "0":
+                    System.out.println("\n"+ mascota.nombre + " ha dormido como un tronco!");
                     mascota.dormir();
+                    //mascota.pasarTiempo();
                     break;
 
-                // La mascota duerme
-                case "Inventario":
-                    inventario.mostrarInventario();
-                    break;
+                // Se usa un item de inventario
+                case "1","2","3","4":
+                    int id = Integer.parseInt(siguienteJugada);
+                    if(inventario.searchById(id)!=null){
+                        mascota.usarItem(inventario.searchById(id));
+                        inventario.actualizarCantidad(id);
+                        break;           
+                    }else{
+                        System.out.println("\n¡Item agotado!");
+                        mascota.edad -= 0.5;
+                        mascota.salud += 5;
+                        mascota.energia += 5;
+                        mascota.felicidad +=5;   
+                        break;  
+                    }
 
                 // Cualquier otro caso es invalido
                 default:
-                    System.out.println("\n¡Entrada no valida!\n");
+                    System.out.println("\n¡Entrada no valida!");
+                    mascota.edad -= 0.5;
+                    mascota.salud += 5;
+                    mascota.energia += 5;
+                    mascota.felicidad +=5;
                     break;
-            }
+            }         
         }
+        input.close();
     }
 }

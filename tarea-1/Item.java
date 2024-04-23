@@ -1,24 +1,29 @@
 public class Item {
-    public int id;                
-    public int cantidad;
-    public String nombre;
+    private int id;                
+    private String tipo;
+    private String nombre;
+    private int cantidad;
         
-    public Item(int newId, int newCant, String newNom) {
-        this.id = newId;
-        this.cantidad = newCant;
-        this.nombre = newNom;
+    public Item(int id, String tipo, String nombre, int cantidad) {
+        this.id = id;
+        this.tipo = tipo;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
     }
-    public int getId() {
-        return id;
+    public int getId() {return id;}
+
+    public String getTipo() {return tipo;}
+
+    public String getNombre() {return nombre;}
+
+    public int getCant() {return cantidad;}
+
+    public void setCant(int newCant) {
+        cantidad = newCant;
     }
-    public int getCant() {
-        return cantidad;
-    }
-    public void setCant(int cant) {
-        cantidad = cant;
-    }
+    
     public void mostrarItem() {
-        System.out.println(this.id + " " + this.nombre + " " + this.cantidad);
+        System.out.println(this.id + ": " + this.nombre + ", cantidad " + this.cantidad);
     }
 }
 
