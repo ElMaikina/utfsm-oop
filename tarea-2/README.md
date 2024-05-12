@@ -17,3 +17,4 @@ Ejecutar el siguiente comando:
 javac --module-path %PATH_TO_FX% --add-modules javafx.controls 
 
 ```
+hola como estan
