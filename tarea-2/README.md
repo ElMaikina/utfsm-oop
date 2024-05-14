@@ -17,7 +17,6 @@ Para compilar el programa"
 javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls App.java
 
 ```
-<<<<<<< HEAD
 
 Para luego correrlo:
 
@@ -25,5 +24,3 @@ Para luego correrlo:
 java --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls App
 
 ```
-=======
->>>>>>> 2ca21fee172f36782682c5fefc2b027ee3cfa03b
