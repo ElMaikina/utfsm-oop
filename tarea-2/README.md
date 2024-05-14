@@ -11,9 +11,16 @@ Tener la última versión de _Java_, _Javac_ y _Make_ instalados en su equipo. S
 
 ## Ejecución
 
-Ejecutar el siguiente comando:
+Para compilar el programa"
 
 ```
-javac --module-path %PATH_TO_FX% --add-modules javafx.controls 
+javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls App.java
+
+```
+
+Para luego correrlo:
+
+```
+java --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls App
 
 ```
