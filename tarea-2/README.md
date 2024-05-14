@@ -11,14 +11,14 @@ Tener la última versión de _Java_, _Javac_ y _Make_ instalados en su equipo. S
 
 ## Ejecución
 
-Para compilar el programa"
+Se asume que se tiene la ultima version de _JavaFX_ (22.0.1) instalados en _C:_ de Windows. Luego, para compilar el programa:
 
 ```
 javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls App.java
 
 ```
 
-Para luego correrlo:
+Una vez generados los archivos de tipo Clase, correr a traves del siguiente comando:
 
 ```
 java --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls App
