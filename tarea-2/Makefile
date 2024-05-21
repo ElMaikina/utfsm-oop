@@ -1,5 +1,5 @@
 JFLAGS = -g
-JC = javac
+JC = javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics App.java
 
 .SUFFIXES: .java .class
 
@@ -7,10 +7,11 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 run:
-	java Main
+	java --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics App
 
 
 CLASSES = \
+        App.java \
         Estado.java \
         Inventario.java \
         Item.java \
