@@ -30,6 +30,7 @@ public class Controller
     public void actionLuz(){
         if (estado_luz=true){
             estado_luz=false;
+            mi_mascota.dormir();
         }
         else{
             estado_luz=true;
