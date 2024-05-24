@@ -1,5 +1,5 @@
 JFLAGS = -g
-JC = javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics App.java
+JC = javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics Interfaz.java
 
 .SUFFIXES: .java .class
 
@@ -7,11 +7,12 @@ JC = javac --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,
 	$(JC) $(JFLAGS) $*.java
 
 run:
-	java --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics App
+	java --module-path C:/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics Interfaz
 
 
 CLASSES = \
-        App.java \
+        Interfaz.java \
+        Controlador.java \
         Estado.java \
         Inventario.java \
         Item.java \

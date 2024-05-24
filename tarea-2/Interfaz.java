@@ -21,7 +21,7 @@ public class Interfaz extends Application {
         
         // TODO: Permitir al jugador elegir el nombre de su mascota
         Mascota pet = new Mascota("animal");
-        Controller control = new Controller(pet);
+        Controlador control = new Controlador(pet);
 
         float delay = 0.5f; // Periodo de tiempo en el cual el controlador hace los chequeos
         control.start_timer(delay); // El controlador revisa el estado del juego cada periodo de timepo
