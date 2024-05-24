@@ -137,18 +137,19 @@ public class Mascota {
     }
 
     public void pasarTiempo(){
-        if(salud>100){salud=100;}
-        salud -= 5;
-        if(salud<0){salud=0;}
-
-        if(energia>100){energia=100;}
-        energia -= 5;
-        if(energia<0){energia=0;}
-
-        if(felicidad>100){felicidad=100;}
-        felicidad -= 5;
-        if(felicidad<0){felicidad=0;}
-
-        edad += 0.5;
+        System.out.println("Paso el tiempo!");
+        //if(salud>100){salud=100;}
+        //salud -= 5;
+        //if(salud<0){salud=0;}
+//
+        //if(energia>100){energia=100;}
+        //energia -= 5;
+        //if(energia<0){energia=0;}
+//
+        //if(felicidad>100){felicidad=100;}
+        //felicidad -= 5;
+        //if(felicidad<0){felicidad=0;}
+//
+        //edad += 0.5;
     }
 }
