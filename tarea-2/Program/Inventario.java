@@ -21,11 +21,14 @@ public class Inventario {
         inventario.add(item);
     }
     
-    public void consumirItem(Item item){
+    // retorna verdadero si se cantidad = 0, falso si no
+    public boolean consumirItem(Item item){
         item.usarItem(mascota);
         if(item.getCantidad()==0){
             inventario.remove(item); // JVM sabrá cual item eliminar porque difieren en ID
+            return true;
         }
+        return false;
     }
 
     public Item buscarItem(int ID){
@@ -47,8 +50,5 @@ public class Inventario {
             }
         });
     }
-
-
-
 
 }

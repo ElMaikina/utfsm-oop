@@ -3,13 +3,15 @@ package Program.Items;
 import Program.Mascota;
 
 public final class Medicina extends Item{
+    String tipo = "MEDICINA";
 
     public Medicina(int id, String nombre, int cantidad){
         super(id, nombre, cantidad);
     }
 
+    @Override
     public void usarItem(Mascota mascota){
-        int newSalud = mascota.getSalud() + 40;
+        double newSalud = mascota.getSalud().get() + 40;
 
         if (newSalud > Mascota.MAX_STATS){newSalud = 100;}
         
@@ -17,4 +19,7 @@ public final class Medicina extends Item{
 
         cantidad--;
     }
+
+    @Override
+    public String getTipo() {return tipo;}
 }

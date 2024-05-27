@@ -16,7 +16,7 @@ public abstract class Item {
     // metodo usarItem se encuentra definido en cada subclase de Item (Juguete, Medicina, Comida)
     // aumenta las estadisticas respectivas de la mascota y consume item (a menos que sea Juguete)
     public abstract void usarItem(Mascota mascota);
-
+    public abstract String getTipo();
 
 
     //GETers & SETers
