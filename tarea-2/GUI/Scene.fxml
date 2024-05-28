@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="663.0" style="-fx-pref-width: 640; -fx-pref-height: 360;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+   <children>
+      <MenuBar layoutY="2.0" style="-fx-pref-width: 640;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Inicio">
+               <items>
+                  <MenuItem fx:id="start" mnemonicParsing="false" onAction="#start_timer" text="Start" />
+                  <RadioMenuItem mnemonicParsing="false" text="Restart" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Luz">
+               <items>
+                  <MenuItem fx:id="luzItem" mnemonicParsing="false" onAction="#actionLuz" text="Apagar" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <ImageView fx:id="backround" fitHeight="287.0" fitWidth="334.0" layoutX="285.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagenes/backyard.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pet" fitHeight="150.0" fitWidth="200.0" layoutX="371.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagenes/cinnamon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="100.0" text="Salud" />
+      <ProgressBar fx:id="healthBar" layoutX="15.0" layoutY="117.0" prefHeight="18.0" prefWidth="242.0" progress="1.0" />
+      <Label layoutX="15.0" layoutY="135.0" text="Energia" />
+      <ProgressBar fx:id="energyBar" layoutX="15.0" layoutY="152.0" prefHeight="18.0" prefWidth="242.0" progress="1.0" />
+      <Label layoutX="15.0" layoutY="171.0" text="Felicidad" />
+      <ProgressBar fx:id="happinessBar" layoutX="15.0" layoutY="188.0" prefHeight="18.0" prefWidth="242.0" progress="0.51" />
+      <Label layoutX="117.0" layoutY="51.0" text="Estado" />
+      <Label fx:id="stateLabel" layoutX="120.0" layoutY="72.0" text="NEUTRO">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="219.0" text="Comida" />
+      <Label layoutX="111.0" layoutY="219.0" text="Medicina" />
+      <Label layoutX="285.0" layoutY="43.0" text="Nombre:" />
+      <Label layoutX="23.0" layoutY="60.0" text="Edad:" />
+      <Label fx:id="edadLabel" layoutX="64.0" layoutY="60.0" prefHeight="17.0" prefWidth="47.0" text="0" />
+      <Label fx:id="nombreLabel" layoutX="344.0" layoutY="40.0" prefHeight="22.0" prefWidth="242.0" text="Pedro">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Pane layoutX="15.0" layoutY="236.0" prefHeight="97.0" prefWidth="181.0">
+         <children>
+            <Button fx:id="food1" layoutY="1.0" mnemonicParsing="false" onAction="#comer1" text="Food1" />
+            <Label fx:id="foodLabel1" layoutX="65.0" layoutY="8.0" text="1" />
+            <Button fx:id="food2" layoutY="27.0" mnemonicParsing="false" onAction="#comer2" text="Food2" />
+            <Button fx:id="food3" layoutY="53.0" mnemonicParsing="false" onAction="#comer3" text="Food3" />
+            <Button fx:id="med1" layoutX="94.0" layoutY="2.0" mnemonicParsing="false" onAction="#sanar1" text="Button" />
+            <Button fx:id="med2" layoutX="94.0" layoutY="29.0" mnemonicParsing="false" onAction="#sanar2" text="Button" />
+            <Button fx:id="med3" layoutX="94.0" layoutY="53.0" mnemonicParsing="false" onAction="#sanar3" text="Button" />
+            <Label fx:id="foodLabel2" layoutX="65.0" layoutY="34.0" text="1" />
+            <Label fx:id="foodLabel3" layoutX="65.0" layoutY="58.0" text="1" />
+            <Label fx:id="medLabel1" layoutX="156.0" layoutY="8.0" text="1" />
+            <Label fx:id="medLabel2" layoutX="156.0" layoutY="34.0" text="1" />
+            <Label fx:id="medLabel3" layoutX="156.0" layoutY="58.0" text="1" />
+         </children>
+      </Pane>
+      <Button fx:id="testButton" layoutX="572.0" layoutY="39.0" mnemonicParsing="false" onAction="#test" text="TEST" />
+      <ImageView fx:id="toyViewer2" fitHeight="40.0" fitWidth="60.0" layoutX="206.0" layoutY="285.0" onMouseClicked="#jugar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="toyViewer1" fitHeight="50.0" fitWidth="50.0" layoutX="211.0" layoutY="228.0" onMouseClicked="#jugar" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</Pane>

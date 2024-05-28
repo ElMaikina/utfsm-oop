@@ -1,5 +1,8 @@
 Garfield
-1;Juguete;Pelota;4
-2;Comida;Queso;5
-3;Comida;Pan;3
-4;Medicina;Jarabe;4
+1;Juguete;Pelota;Imagenes/ball.jpg
+2;Juguete;Hueso;Imagenes/bone.jpg
+3;Alimento;Leche;5
+4;Alimento;Arroz;4
+5;Alimento;Carne;3
+6;Medicina;Jarabe;4
+7;Medicina;Pastilla;4
