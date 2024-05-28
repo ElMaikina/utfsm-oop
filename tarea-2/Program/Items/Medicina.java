@@ -13,7 +13,9 @@ public final class Medicina extends Item{
     public void usarItem(Mascota mascota){
         double newSalud = mascota.getSalud().get() + 40;
 
-        if (newSalud > Mascota.MAX_STATS){newSalud = 100;}
+        if (newSalud > Mascota.MAX_STATS){
+            newSalud = Mascota.MAX_STATS;
+        }
         
         mascota.setSalud(newSalud);
 

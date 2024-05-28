@@ -51,12 +51,12 @@ public class Mascota {
             salud.set(MAX_STATS);
         }
         energia.set(energia.get()+20);
-        if(energia.get()<MIN_STATS) {
-            energia.set(MIN_STATS);
+        if(energia.get()>MAX_STATS) {
+            energia.set(MAX_STATS);
         }
         felicidad.set(felicidad.get()+2);
-        if(salud.get()<MIN_STATS) {
-            salud.set(MIN_STATS);
+        if(felicidad.get()>MAX_STATS) {
+            felicidad.set(MAX_STATS);
         }
 
         edad += 0.5;
@@ -85,7 +85,7 @@ public class Mascota {
     // De esa manera se cumple que la primera condición que sea verdadera será el estado de mayor prioridad.
 
         // MUERTO -> edad >= 15 o salud = 0 o energía = 0.
-        if (edad>=15 || salud.get()==0 || energia.get()==0) {estado = "MUERTO";}
+        if (edad>=EDAD_MAX || salud.get()==0 || energia.get()==0) {estado = "MUERTO";}
 
         // CANSADO -> energia <= 15.
         else if (energia.get() <= 15) {estado = "CANSADO";}

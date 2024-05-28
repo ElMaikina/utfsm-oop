@@ -16,7 +16,8 @@ public final class Comida extends Item{
         double newSalud = mascota.getSalud().get() + 20;
         double newEnergia = mascota.getEnergia().get() + 20;
 
-        if (newSalud > 100){newSalud = 100;}
+        if (newSalud > Mascota.MAX_STATS) {newSalud = Mascota.MAX_STATS;}
+        if (newEnergia > Mascota.MAX_STATS) {newEnergia = Mascota.MAX_STATS;}
 
         mascota.setSalud(newSalud);
         mascota.setEnergia(newEnergia);

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -13,14 +14,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="663.0" style="-fx-pref-width: 640; -fx-pref-height: 360;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <children>
-      <Button fx:id="toy2" layoutX="225.0" layoutY="275.0" mnemonicParsing="false" onAction="#jugar" prefHeight="37.0" prefWidth="47.0" text="toy2" />
-      <Button fx:id="toy1" layoutX="223.0" layoutY="218.0" mnemonicParsing="false" onAction="#jugar" prefHeight="37.0" prefWidth="49.0" text="toy1" />
       <MenuBar layoutY="2.0" style="-fx-pref-width: 640;">
          <menus>
             <Menu mnemonicParsing="false" text="Inicio">
                <items>
                   <MenuItem fx:id="start" mnemonicParsing="false" onAction="#start_timer" text="Start" />
-                  <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+                  <RadioMenuItem mnemonicParsing="false" text="Restart" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Luz">
@@ -78,15 +78,7 @@
          </children>
       </Pane>
       <Button fx:id="testButton" layoutX="572.0" layoutY="39.0" mnemonicParsing="false" onAction="#test" text="TEST" />
-      <ImageView fitHeight="37.0" fitWidth="60.0" layoutX="177.0" layoutY="275.0" onMouseClicked="#jugar" onMousePressed="#jugar" pickOnBounds="true" preserveRatio="true" rotate="90.0">
-         <image>
-            <Image url="@Imagenes/bone.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="186.0" layoutY="218.0" onMouseClicked="#jugar" onMousePressed="#jugar" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Imagenes/ball.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="toyViewer2" fitHeight="40.0" fitWidth="60.0" layoutX="206.0" layoutY="285.0" onMouseClicked="#jugar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="toyViewer1" fitHeight="50.0" fitWidth="50.0" layoutX="211.0" layoutY="228.0" onMouseClicked="#jugar" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

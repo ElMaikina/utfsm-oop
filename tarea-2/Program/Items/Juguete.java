@@ -18,9 +18,8 @@ public final class Juguete extends Item{
     public void usarItem(Mascota mascota){
         double newFelicidad = mascota.getFelicidad().get() + 30;
 
-        if (newFelicidad > Mascota.MAX_STATS){
-            newFelicidad=100;
-        }
+        if (newFelicidad > Mascota.MAX_STATS) {newFelicidad = Mascota.MAX_STATS;}
+
         mascota.setFelicidad(newFelicidad);        
     }
 

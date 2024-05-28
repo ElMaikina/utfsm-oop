@@ -15,14 +15,10 @@ import Program.Items.Juguete;
 import Program.Items.Medicina;
 
 public class App extends Application {
-    //public Mascota mascota = new Mascota("animal");
-    // public Mascota mascota = new Mascota(null);
-    // public Inventario inventario = new Inventario(mascota);
-
-    public static Mascota mascota;
-    public static Inventario inventario;
-    public static String toy1 = null;
-    public static String toy2 = null;
+    private static Mascota mascota;
+    private static Inventario inventario;
+    private static String toy1;
+    private static String toy2;
 
     @Override
     public void start(Stage primaryStage) throws IOException{
@@ -34,13 +30,12 @@ public class App extends Application {
         Controller controller = fxmlLoader.getController();
         controller.iniciarMascota(mascota);
         controller.iniciarInventario(inventario,toy1,toy2);
+        controller.setStage(primaryStage);
     
 
         primaryStage.setTitle("JavaFX Interface");
         primaryStage.setScene(scene);
         primaryStage.show();
-
-        
     }
 
     public static void main(String[] args) {
@@ -72,18 +67,16 @@ public class App extends Application {
                         String nombre = subdata[2];
                         int cantidad;
                         String imagen;
-
-                        System.out.println("holaaaaaaaaaa");
             
                         Item newItem;
                         switch (tipo) {
-                            case "Jueguete":
+                            case "Juguete":
                                 imagen = subdata[3];
-                                if(toy1==null){
-                                    toy1 = imagen;
+                                if(App.toy1==null){
+                                    App.toy1 = imagen;
                                 }
                                 else {
-                                    toy2 = imagen;
+                                    App.toy2 = imagen;
                                 }
                                 newItem = new Juguete(id, nombre);
                                 inventario.agregarItem(newItem);
@@ -101,9 +94,6 @@ public class App extends Application {
                                 inventario.agregarItem(newItem);
                                 break;
                         }
-                    }
-                    for (Item i : inventario.abrirInventario()){
-                        System.out.println(i);
                     }
                 }
             }
