@@ -29,7 +29,6 @@ public class Controller {
     private Inventario inventario;
     private Stage stage;
     private int idPad[][] = new int[2][3];
-    // private int idJuguetes[] = new int[2];
     // idList[0][n] = lista de Comida
     // idList[1][n] = lista de Medicina
     private Timeline timeline;
@@ -201,8 +200,6 @@ public class Controller {
                 medButtons.get(j).setText("  ----  ");
             }
         }
-        // toyButton1.setText(inventario.buscarItem(idJuguetes[0]).getNombre());
-        // toyButton2.setText(inventario.buscarItem(idJuguetes[1]).getNombre());
     }
 
     public void iniciarIdPad() {
@@ -217,13 +214,6 @@ public class Controller {
                 idPad[1][j] = item.getId();
                 j++;
             }
-            // else {
-            //     if (idJuguetes[0] == 0) {
-            //         idJuguetes[0] = item.getId();
-            //     } else {
-            //         idJuguetes[1] = item.getId();
-            //     }
-            //}
         }
     }
 
