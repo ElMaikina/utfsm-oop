@@ -28,19 +28,14 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("GUI/Scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        
         controller = fxmlLoader.getController();
         controller.iniciarMascota(mascota);
         controller.iniciarInventario(inventario,toy1,toy2);
         controller.setStage(primaryStage);
     
-
         primaryStage.setTitle("JavaFX Interface");
         primaryStage.setScene(scene);
         primaryStage.show();
-
-        System.out.println("lol");
-
     }
 
     public static void main(String[] args) {
@@ -65,8 +60,6 @@ public class App extends Application {
                     }
                     else {
                         String[] subdata = line.split(cvsSplitBySemiColon);
-                        System.out.println(subdata[0] + "  " + subdata[1] + "   " + subdata[2] + "  " + subdata[3]);
-
                         int id = Integer.parseInt(subdata[0]);
                         String tipo = subdata[1];
                         String nombre = subdata[2];
@@ -105,10 +98,8 @@ public class App extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Mascota lol = mascota.clone();
-        launch(args);
-        System.out.println(lol.getSalud().get());        
+        
+        launch(args);   
     }
 }
 

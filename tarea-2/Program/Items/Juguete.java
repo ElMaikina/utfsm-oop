@@ -7,10 +7,6 @@ public final class Juguete extends Item{
 
     public Juguete(int id, String nombre){
         super(id, nombre,-1);
-
-        // this.setId(id);
-        // this.setNombre(nombre);
-        // this.setCantidad(1);
     }
     
     // usar Jueguete => felicidad de la mascota aumenta +30, juguete NO se consume (no se elimina de inventario)

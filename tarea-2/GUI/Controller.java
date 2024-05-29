@@ -271,7 +271,7 @@ public class Controller {
                         estadoLabel.setText(mascota.getEstado().toString());
                         edadLabel.setText(mascota.getEdad().toString());
                         if (mascota.getEstado().equals("MUERTO")) {
-                          timeline.stop();
+                            timeline.stop();
                         }
                     });
         
@@ -284,11 +284,21 @@ public class Controller {
         
             public void reset(ActionEvent e) {
                 timeline.stop();
-                
+                for (Item i : ORIGINALinventario.abrirInventario()){
+                    System.out.println(i.getCantidad() + i.getNombre());
+                }               
                 mascota = ORIGINALmascota.clone();
+                //System.out.println("---------");
                 inventario = ORIGINALinventario.clone();
+                // for (Item i : inventario.abrirInventario()){
+                //     System.out.println(i.getCantidad() + " " + i.getNombre());
+                // }
+                // System.out.println("---------");
                 iniciarMascota(mascota);
                 iniciarInventario(inventario,toy1URL,toy2URL);
+                // for (Item i : inventario.abrirInventario()){
+                //     System.out.println(i.getCantidad() + " " + i.getNombre());
+                // }
 
                 timeline = null;
             }
