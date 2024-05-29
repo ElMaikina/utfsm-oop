@@ -85,16 +85,13 @@ public class Controller {
                 for(Item item : inventario.abrirInventario()){
                     if (item.getTipo().equals("COMIDA")) {
                         idPad[0][i] = item.getId();
-                        System.out.println(idPad[0][i]);
                         i++;
                     }
                     else if (item.getTipo().equals("MEDICINA")) {
                         idPad[1][j] = item.getId();
-                        System.out.println(idPad[1][j]);
                         j++;
                     }
                 }
-                System.out.println(idPad[1][2]);
             }
 
             // BOTONES (COMIDA Y MEDICINA)
@@ -161,7 +158,8 @@ public class Controller {
                 medLabels.add(medLabel1);
                 medLabels.add(medLabel2);
                 medLabels.add(medLabel3);
-        
+                actualizarLabels();
+
                 //Buttons
                 foodButtons.add(food1);
                 foodButtons.add(food2);
@@ -169,10 +167,9 @@ public class Controller {
                 medButtons.add(med1);
                 medButtons.add(med2);
                 medButtons.add(med3);
-        
-                actualizarLabels();
+                for (Button b : foodButtons) {b.setOnAction(null);}
+                for (Button b : medButtons) {b.setOnAction(null);}         
                 nombrarBotones();
-                asignarBotones();
             }
 
             public void actualizarLabels() {       
@@ -201,17 +198,18 @@ public class Controller {
             public void asignarBotones() {
                 for(int i=0; i<=2; i++){
                     //Local variable i defined in an enclosing scope must be final or effectively finalJava(536871575)
-                    //No sé por qué pero yo hago caso
                     final int index = i;
                     foodButtons.get(index).setOnAction((e)->{
-                        if(inventario.buscarItem(idPad[0][index]).getCantidad()==1){
+                        if(inventario.buscarItem(idPad[0][index]).getCantidad()==1) {
                             inventario.consumirItem(inventario.buscarItem(idPad[0][index]));
                             idPad[0][index]=0;
+                            foodButtons.get(index).setOnAction(null);
                         }
                         else {
                             inventario.consumirItem(inventario.buscarItem(idPad[0][index]));
                         }
                         actualizarLabels();
+                        nombrarBotones();
                     });
                 }
                 for(int j=0; j<=2; j++){
@@ -220,12 +218,14 @@ public class Controller {
                         if(inventario.buscarItem(idPad[1][index]).getCantidad()==1){
                             inventario.consumirItem(inventario.buscarItem(idPad[1][index]));
                             idPad[1][index]=0;
+                            medButtons.get(index).setOnAction(null);
                         }
                         else {
                             inventario.consumirItem(inventario.buscarItem(idPad[1][index]));
+                            
                         }
                         actualizarLabels();
-        
+                        nombrarBotones();
                     });
                 }
                 
@@ -254,9 +254,10 @@ public class Controller {
 
             private Item placeHolder = new Juguete(0, null);
             public void jugar(MouseEvent e){
-                inventario.consumirItem(placeHolder);
-                actualizarLabels();
+                if(timeline!=null) {inventario.consumirItem(placeHolder);}
             }
+
+
 
     // MENÚ
             // MENU_ITEMS
@@ -274,6 +275,7 @@ public class Controller {
             private KeyFrame keyframe;
             public void start() {
                 if (timeline==null) {
+                    asignarBotones();
                     keyframe = new KeyFrame(Duration.millis(500), event -> {
                         if (!estado_luz) {
                             mascota.dormir();
