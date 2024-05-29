@@ -76,7 +76,6 @@
             <Label fx:id="medLabel3" layoutX="156.0" layoutY="58.0" text="1" />
          </children>
       </Pane>
-      <Button fx:id="testButton" layoutX="572.0" layoutY="39.0" mnemonicParsing="false" onAction="#test" text="TEST" />
       <ImageView fx:id="toyViewer2" fitHeight="40.0" fitWidth="60.0" layoutX="206.0" layoutY="285.0" onMouseClicked="#jugar" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="toyViewer1" fitHeight="50.0" fitWidth="50.0" layoutX="211.0" layoutY="228.0" onMouseClicked="#jugar" pickOnBounds="true" preserveRatio="true" />
    </children>
