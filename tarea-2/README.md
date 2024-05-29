@@ -20,6 +20,7 @@ make
 Alternativamente, para correrlo en sistemas UNIX (Linux y Mac) correr el siguiente comando:
 
 ```
+sudo chmod +x compilar_y_correr.sh
 ./compilar_y_correr.sh
 
 ```
