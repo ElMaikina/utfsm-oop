@@ -19,7 +19,11 @@ import Program.Mascota;
 import Program.Items.Item;
 import Program.Items.Juguete;
 import java.util.ArrayList;
-
+import java.awt.*; 
+import javax.swing.*; 
+import java.awt.event.*; 
+import java.net.*; 
+  
 
 
 public class Controller {
@@ -310,7 +314,7 @@ public class Controller {
             public void close(ActionEvent e) {
                 stage.close();
             }
-        
+            
             public void actionLuz(ActionEvent e) {
                 if (estado_luz) {
                     estado_luz = false;
@@ -320,6 +324,14 @@ public class Controller {
                     estado_luz = true;
                     luzItem.setText("Apagar");
                     backround.setImage(light);
+                }
+            }
+            // El boton de ayuda abrira una ventana en el navegador con el repositorio
+            public void actionHelp() {
+                try {
+                    Desktop.getDesktop().browse(new URL("https://github.com/ElMaikina/utfsm-oop/tree/main/tarea-2").toURI());
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 
