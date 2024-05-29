@@ -26,6 +26,7 @@ sudo chmod +x compilar_y_correr.sh
 ./compilar_y_correr.sh
 
 ```
+_*Importante*: La tarea fue probada en MacOS y Arch Linux, de ser que no funcione en otro sistema operativo basado en UNIX, cambiar la direccion de la libreria acorde a su distribucion correspondiente._
 
 ## Diagramas
 
