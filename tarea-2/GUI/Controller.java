@@ -19,6 +19,10 @@ import Program.Mascota;
 import Program.Items.Item;
 import Program.Items.Juguete;
 import java.util.ArrayList;
+import java.awt.*; 
+import javax.swing.*; 
+import java.awt.event.*; 
+import java.net.*; 
 
 
 /**
