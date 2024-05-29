@@ -141,7 +141,7 @@ public class Controller {
                 this.inventario = new Inventario(mascota);
                 
                 for(Item i : ORIGINALinventario.abrirInventario()){
-                    this.inventario.agregarItem(i);
+                    this.inventario.agregarItem(i.clone());
                 } 
                 toy1URL = image1;
                 toy2URL = image2;
@@ -324,12 +324,12 @@ public class Controller {
         @FXML
         private Button testButton;
         public void test(ActionEvent e){
-            for (Item item : inventario.abrirInventario()) {
+            for (Item item : ORIGINALinventario.abrirInventario()) {
                 System.out.println(item.getNombre() + " - Cantidad: " + item.getCantidad());
             }
             for(int i=0; i<2; i++){
                 for(int j=0; j<3; j++){
-                    System.out.println(idPad[i][j]);
+                    System.out.println(inventario.buscarItem(idPad[i][j]).getCantidad());
                 }
             }
         }
