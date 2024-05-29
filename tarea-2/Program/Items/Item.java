@@ -2,7 +2,7 @@ package Program.Items;
 
 import Program.Mascota;
 
-public abstract class Item {
+public abstract class Item implements Cloneable{
     protected int id;
     protected String nombre;
     protected int cantidad; 
@@ -28,5 +28,8 @@ public abstract class Item {
 
     public int getCantidad() {return cantidad;}
     public void setCantidad(int newCantidad) {cantidad = newCantidad;} 
+
+    @Override
+    public abstract Item clone();
 
 }

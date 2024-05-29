@@ -2,7 +2,7 @@ package Program;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
-public class Mascota {
+public class Mascota implements Cloneable{
     // salud, energía y felicidad maxima
     public static final int MAX_STATS = 100;
     // salud energía y felicidad mínima
@@ -23,6 +23,12 @@ public class Mascota {
         this.energia = new SimpleDoubleProperty(100);
         this.felicidad = new SimpleDoubleProperty(50);
         this.getEstado();
+    }
+
+    @Override
+    public Mascota clone() {
+        Mascota clone = new Mascota(nombre);
+        return clone;
     }
 
     public void envejecer(){

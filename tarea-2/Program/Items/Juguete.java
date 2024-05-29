@@ -7,10 +7,6 @@ public final class Juguete extends Item{
 
     public Juguete(int id, String nombre){
         super(id, nombre,-1);
-
-        // this.setId(id);
-        // this.setNombre(nombre);
-        // this.setCantidad(1);
     }
     
     // usar Jueguete => felicidad de la mascota aumenta +30, juguete NO se consume (no se elimina de inventario)
@@ -25,4 +21,10 @@ public final class Juguete extends Item{
 
     @Override
     public String getTipo() {return tipo;}
+
+    @Override
+    public Item clone() {
+        Item clone = new Juguete(id, nombre);
+        return clone;
+    }
 }
