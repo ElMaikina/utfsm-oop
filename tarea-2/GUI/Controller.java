@@ -85,13 +85,16 @@ public class Controller {
                 for(Item item : inventario.abrirInventario()){
                     if (item.getTipo().equals("COMIDA")) {
                         idPad[0][i] = item.getId();
+                        System.out.println(idPad[0][i]);
                         i++;
                     }
                     else if (item.getTipo().equals("MEDICINA")) {
                         idPad[1][j] = item.getId();
+                        System.out.println(idPad[1][j]);
                         j++;
                     }
                 }
+                System.out.println(idPad[1][2]);
             }
 
             // BOTONES (COMIDA Y MEDICINA)
@@ -136,8 +139,8 @@ public class Controller {
             private Image toy2;
             private String toy2URL;
 
-            public void iniciarInventario(Inventario inv,String image1, String image2) {
-                ORIGINALinventario = inv;
+            public void iniciarInventario(Inventario inventario,String image1, String image2) {
+                ORIGINALinventario = inventario;
                 this.inventario = new Inventario(mascota);
                 
                 for(Item i : ORIGINALinventario.abrirInventario()){
@@ -187,7 +190,6 @@ public class Controller {
                     if(idPad[1][j]!=0){
                         int cantidad = inventario.buscarItem(idPad[1][j]).getCantidad();
                         String text = String.format("%d",cantidad);
-                        System.out.println("lololol");
                         medLabels.get(j).setText(text);
                     }
                     else{
@@ -293,8 +295,8 @@ public class Controller {
             }
         
             public void reset(ActionEvent e) {
-                timeline.stop();
- 
+                if(timeline!=null){timeline.stop();}
+                
                 mascota = ORIGINALmascota.clone();
                 inventario = ORIGINALinventario.clone();
                 iniciarMascota(mascota);
@@ -327,9 +329,10 @@ public class Controller {
             for (Item item : ORIGINALinventario.abrirInventario()) {
                 System.out.println(item.getNombre() + " - Cantidad: " + item.getCantidad());
             }
-            for(int i=0; i<2; i++){
-                for(int j=0; j<3; j++){
-                    System.out.println(inventario.buscarItem(idPad[i][j]).getCantidad());
+            System.out.println(idPad[1][2] + "--------------------");
+            for(int i=0; i<=2; i++){
+                for(int j=0; j<=2; j++){
+                    System.out.println(idPad[1][2]);
                 }
             }
         }
