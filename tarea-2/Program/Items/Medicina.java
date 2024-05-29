@@ -22,4 +22,10 @@ public final class Medicina extends Item{
 
     @Override
     public String getTipo() {return tipo;}
+
+    @Override
+    public Item clone() {
+        Item clone = new Medicina(id, nombre, cantidad);
+        return clone;
+    }
 }

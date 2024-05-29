@@ -19,6 +19,8 @@ public class App extends Application {
     private static Inventario inventario;
     private static String toy1;
     private static String toy2;
+    private static Controller controller;
+
 
     @Override
     public void start(Stage primaryStage) throws IOException{
@@ -26,8 +28,8 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("GUI/Scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-
-        Controller controller = fxmlLoader.getController();
+        
+        controller = fxmlLoader.getController();
         controller.iniciarMascota(mascota);
         controller.iniciarInventario(inventario,toy1,toy2);
         controller.setStage(primaryStage);
@@ -36,6 +38,9 @@ public class App extends Application {
         primaryStage.setTitle("JavaFX Interface");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        System.out.println("lol");
+
     }
 
     public static void main(String[] args) {
@@ -101,7 +106,9 @@ public class App extends Application {
             e.printStackTrace();
         }
 
+        Mascota lol = mascota.clone();
         launch(args);
+        System.out.println(lol.getSalud().get());        
     }
 }
 

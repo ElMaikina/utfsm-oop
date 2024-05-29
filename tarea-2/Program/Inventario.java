@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 import Program.Items.Item;
 
-public class Inventario {
+public class Inventario implements Cloneable{
     private Mascota mascota;
     private ArrayList<Item> inventario = new ArrayList<Item>();
 
@@ -49,6 +49,15 @@ public class Inventario {
                 return Integer.compare(i1.getId(), i2.getId());
             }
         });
+    }
+
+    @Override
+    public Inventario clone() {
+        Inventario clone = new Inventario(mascota.clone());
+        for(Item i : this.inventario){
+            clone.agregarItem(i.clone());
+        }
+        return clone;
     }
 
 }

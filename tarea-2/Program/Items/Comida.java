@@ -27,4 +27,10 @@ public final class Comida extends Item{
 
     @Override
     public String getTipo() {return tipo;}
+
+    @Override
+    public Item clone() {
+        Item clone = new Comida(id, nombre, cantidad);
+        return clone;
+    }
 }

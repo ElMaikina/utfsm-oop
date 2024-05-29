@@ -6,7 +6,6 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -18,8 +17,8 @@
          <menus>
             <Menu mnemonicParsing="false" text="Inicio">
                <items>
-                  <MenuItem fx:id="start" mnemonicParsing="false" onAction="#start_timer" text="Start" />
-                  <RadioMenuItem mnemonicParsing="false" text="Restart" />
+                  <MenuItem fx:id="start" mnemonicParsing="false" onAction="#start" text="Start" />
+                  <MenuItem fx:id="restart" mnemonicParsing="false" onAction="#reset" text="Restart" />
                   <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close" />
                </items>
             </Menu>
@@ -47,7 +46,7 @@
       <Label layoutX="15.0" layoutY="171.0" text="Felicidad" />
       <ProgressBar fx:id="happinessBar" layoutX="15.0" layoutY="188.0" prefHeight="18.0" prefWidth="242.0" progress="0.51" />
       <Label layoutX="117.0" layoutY="51.0" text="Estado" />
-      <Label fx:id="stateLabel" layoutX="120.0" layoutY="72.0" text="NEUTRO">
+      <Label fx:id="estadoLabel" layoutX="120.0" layoutY="72.0" text="NEUTRO">
          <font>
             <Font size="21.0" />
          </font>
@@ -63,13 +62,13 @@
          </font></Label>
       <Pane layoutX="15.0" layoutY="236.0" prefHeight="97.0" prefWidth="181.0">
          <children>
-            <Button fx:id="food1" layoutY="1.0" mnemonicParsing="false" onAction="#comer1" text="Food1" />
+            <Button fx:id="food1" layoutY="1.0" mnemonicParsing="false" text="Food1" />
             <Label fx:id="foodLabel1" layoutX="65.0" layoutY="8.0" text="1" />
-            <Button fx:id="food2" layoutY="27.0" mnemonicParsing="false" onAction="#comer2" text="Food2" />
-            <Button fx:id="food3" layoutY="53.0" mnemonicParsing="false" onAction="#comer3" text="Food3" />
-            <Button fx:id="med1" layoutX="94.0" layoutY="2.0" mnemonicParsing="false" onAction="#sanar1" text="Button" />
-            <Button fx:id="med2" layoutX="94.0" layoutY="29.0" mnemonicParsing="false" onAction="#sanar2" text="Button" />
-            <Button fx:id="med3" layoutX="94.0" layoutY="53.0" mnemonicParsing="false" onAction="#sanar3" text="Button" />
+            <Button fx:id="food2" layoutY="27.0" mnemonicParsing="false" text="Food2" />
+            <Button fx:id="food3" layoutY="53.0" mnemonicParsing="false" text="Food3" />
+            <Button fx:id="med1" layoutX="94.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="med2" layoutX="94.0" layoutY="29.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="med3" layoutX="94.0" layoutY="53.0" mnemonicParsing="false" text="Button" />
             <Label fx:id="foodLabel2" layoutX="65.0" layoutY="34.0" text="1" />
             <Label fx:id="foodLabel3" layoutX="65.0" layoutY="58.0" text="1" />
             <Label fx:id="medLabel1" layoutX="156.0" layoutY="8.0" text="1" />

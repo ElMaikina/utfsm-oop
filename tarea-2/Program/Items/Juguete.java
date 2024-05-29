@@ -25,4 +25,10 @@ public final class Juguete extends Item{
 
     @Override
     public String getTipo() {return tipo;}
+
+    @Override
+    public Item clone() {
+        Item clone = new Juguete(id, nombre);
+        return clone;
+    }
 }
