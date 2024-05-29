@@ -136,9 +136,10 @@ public class Controller {
             private Image toy2;
             private String toy2URL;
 
-            public void iniciarInventario(Inventario inventario,String image1, String image2) {
-                ORIGINALinventario = inventario;
+            public void iniciarInventario(Inventario inv,String image1, String image2) {
+                ORIGINALinventario = inv;
                 this.inventario = new Inventario(mascota);
+                
                 for(Item i : ORIGINALinventario.abrirInventario()){
                     this.inventario.agregarItem(i);
                 } 
@@ -168,9 +169,34 @@ public class Controller {
         
                 actualizarLabels();
                 nombrarBotones();
+                asignarBotones();
             }
 
             public void actualizarLabels() {       
+                for(int i=0; i<=2; i++){
+                    if(idPad[0][i]!=0){
+                        int cantidad = inventario.buscarItem(idPad[0][i]).getCantidad();
+                        String text = String.format("%d",cantidad);
+                        foodLabels.get(i).setText(text);
+                    }
+                    else{
+                        foodLabels.get(i).setText("0");
+                    }
+                }
+                for(int j=0; j<=2; j++){
+                    if(idPad[1][j]!=0){
+                        int cantidad = inventario.buscarItem(idPad[1][j]).getCantidad();
+                        String text = String.format("%d",cantidad);
+                        System.out.println("lololol");
+                        medLabels.get(j).setText(text);
+                    }
+                    else{
+                        medLabels.get(j).setText("0");
+                    }
+                }
+            }
+
+            public void asignarBotones() {
                 for(int i=0; i<=2; i++){
                     //Local variable i defined in an enclosing scope must be final or effectively finalJava(536871575)
                     //No sé por qué pero yo hago caso
@@ -185,14 +211,6 @@ public class Controller {
                         }
                         actualizarLabels();
                     });
-                    if(idPad[0][i]!=0){
-                        int cantidad = inventario.buscarItem(idPad[0][i]).getCantidad();
-                        String text = String.format("%d",cantidad);
-                        foodLabels.get(i).setText(text);
-                    }
-                    else{
-                        foodLabels.get(i).setText("0");
-                    }
                 }
                 for(int j=0; j<=2; j++){
                     final int index = j;
@@ -207,15 +225,8 @@ public class Controller {
                         actualizarLabels();
         
                     });
-                    if(idPad[1][j]!=0){
-                        int cantidad = inventario.buscarItem(idPad[1][j]).getCantidad();
-                        String text = String.format("%d",cantidad);
-                        medLabels.get(j).setText(text);
-                    }
-                    else{
-                        medLabels.get(j).setText("0");
-                    }
                 }
+                
             }
 
             public void nombrarBotones() {
@@ -259,7 +270,6 @@ public class Controller {
             // TIMELINE
             private Timeline timeline;
             private KeyFrame keyframe;
-            //"ReadOnlyObjectProperty [bean: javafx.animation.Timeline@1521f475, name: status, value: RUNNING]"
             public void start() {
                 if (timeline==null) {
                     keyframe = new KeyFrame(Duration.millis(500), event -> {
@@ -284,21 +294,11 @@ public class Controller {
         
             public void reset(ActionEvent e) {
                 timeline.stop();
-                for (Item i : ORIGINALinventario.abrirInventario()){
-                    System.out.println(i.getCantidad() + i.getNombre());
-                }               
+ 
                 mascota = ORIGINALmascota.clone();
-                //System.out.println("---------");
                 inventario = ORIGINALinventario.clone();
-                // for (Item i : inventario.abrirInventario()){
-                //     System.out.println(i.getCantidad() + " " + i.getNombre());
-                // }
-                // System.out.println("---------");
                 iniciarMascota(mascota);
                 iniciarInventario(inventario,toy1URL,toy2URL);
-                // for (Item i : inventario.abrirInventario()){
-                //     System.out.println(i.getCantidad() + " " + i.getNombre());
-                // }
 
                 timeline = null;
             }

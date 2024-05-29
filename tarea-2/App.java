@@ -48,56 +48,51 @@ public class App extends Application {
         String cvsSplitBySemiColon = ";";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            while ((line = br.readLine()) != null) 
-            {
-                // Usa el separador para dividir la línea en campos
+            while ((line = br.readLine()) != null) {
                 String[] data = line.split(cvsSplitByComa);
 
-                // Imprime cada campo
                 for (String field : data) {
                     if (mascota.getNombre() == null) {
                         mascota.setNombre(field);
-                    }
-                    else {
-                        String[] subdata = line.split(cvsSplitBySemiColon);
-                        int id = Integer.parseInt(subdata[0]);
-                        String tipo = subdata[1];
-                        String nombre = subdata[2];
-                        int cantidad;
-                        String imagen;
+                }
+                else {
+                    String[] subdata = line.split(cvsSplitBySemiColon);
+                    int id = Integer.parseInt(subdata[0]);
+                    String tipo = subdata[1];
+                    String nombre = subdata[2];
+                    int cantidad;
+                    String imagen;
             
-                        Item newItem;
-                        switch (tipo) {
-                            case "Juguete":
-                                imagen = subdata[3];
-                                if(App.toy1==null){
-                                    App.toy1 = imagen;
-                                }
-                                else {
-                                    App.toy2 = imagen;
-                                }
-                                newItem = new Juguete(id, nombre);
-                                inventario.agregarItem(newItem);
-                                break;
-
-                            case "Alimento":
-                                cantidad = Integer.parseInt(subdata[3]);
-                                newItem = new Comida(id, nombre, cantidad);
-                                inventario.agregarItem(newItem);
-                                break;
-
-                            case "Medicina":
-                                cantidad = Integer.parseInt(subdata[3]);
-                                newItem = new Medicina(id, nombre, cantidad);
-                                inventario.agregarItem(newItem);
-                                break;
-                        }
+                    Item newItem;
+                    switch (tipo) {
+                        case "Juguete":
+                            imagen = subdata[3];
+                            if(App.toy1==null){
+                                App.toy1 = imagen;                                
+                            }
+                            else {
+                                App.toy2 = imagen;
+                            }
+                            newItem = new Juguete(id, nombre);
+                            inventario.agregarItem(newItem);
+                            break;
+                        case "Alimento":
+                            cantidad = Integer.parseInt(subdata[3]);
+                            newItem = new Comida(id, nombre, cantidad);
+                            inventario.agregarItem(newItem);
+                            break;
+                        case "Medicina":
+                            cantidad = Integer.parseInt(subdata[3]);
+                            newItem = new Medicina(id, nombre, cantidad);
+                            inventario.agregarItem(newItem);
+                            break;
                     }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
         
         launch(args);   
     }
