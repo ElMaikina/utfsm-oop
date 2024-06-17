@@ -2,7 +2,7 @@
 
 ## Grupo 18
 - Miguel Soto Delgado, Rol 201973623-K
-- Sebastián Moya, Rol 202330520-7
+- Sebastián Moya, Rol 202230520-7
 - Maximiliano Muñoz Hinojosa, Rol 202104526-0
 - Joaquín Jara Hananías, Rol 202221028-1
 
