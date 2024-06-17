@@ -7,15 +7,14 @@
 - Joaquín Jara Hananías, Rol 202221028-1
 
 ## Requisitos
-Tener la última versión de _Java_, _Javac_ y _Make_ instalados en su equipo. Software usado y sus versiónes correspondientes a continuación.
+Tener la última versión de _GCC_ y _Make_ instalados en su equipo. Software usado y sus versiónes correspondientes a continuación.
 
-Java
+GCC
 ```
-Java HotSpot(TM) 64-Bit Server VM (build 22+36-2370, mixed mode, sharing)
-```
-JavaC
-```
-javac 22
+gcc (GCC) 13.2.1 20240316 (Red Hat 13.2.1-7)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 Make
 ```
