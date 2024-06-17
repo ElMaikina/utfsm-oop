@@ -2,7 +2,7 @@
 
 ## Grupo 18
 - Miguel Soto Delgado, Rol 201973623-K
-- Sebastián Moya, Rol 202230520-7
+- Sebastián Moya, Rol 202330520-7
 - Maximiliano Muñoz Hinojosa, Rol 202104526-0
 - Joaquín Jara Hananías, Rol 202221028-1
 
@@ -16,6 +16,7 @@ Copyright (C) 2023 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
+
 Make
 ```
 GNU Make 4.4.1
