@@ -31,7 +31,7 @@ public:
         felicidad = 50;
         actualizarEstado();
     }
-    void Mascota::penalizar(){
+    void penalizar(){
         if (edad<=5 && salud >=10){
             felicidad-=20;
         }
