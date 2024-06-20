@@ -35,10 +35,10 @@ public:
         if (edad<=5 && salud >=10){
             felicidad-=20;
         }
-        else (5<edad && edad<=10 && salud<=50) {
+        if (5<edad && edad<=10 && salud<=50){
             felicidad -= 20; energia -= 10;
         }
-        else (edad>10 && salud<=50) {
+        if (edad>10 && salud<=50) {
             felicidad -= 30; energia -= 20;
         }
         if(salud<0){
@@ -157,10 +157,10 @@ public:
     void mostrarMascota(){
         std::cout<<"Atributos"<<std::endl;
         std::cout<<"-----------"<<std::endl;
-        std::cout<<"Nombre:"<<+nombre<<std::endl;
+        std::cout<<"Nombre:"<<nombre<<std::endl;
         std::cout<<"Edad:"<<edad<<std::endl;
         std::cout<<"Salud:"<<salud<<std::endl;
         std::cout<<"felicidad"<<felicidad<<std::endl;
         std::cout<<estado<<std::endl;
     }
-}
+};
