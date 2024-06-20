@@ -1,26 +1,34 @@
 #ifndef MASCOTA_H
-#define MASCOTA_H
-
+#define MASCOTA_Hs
+#include "../headers/Item.h"
 #include <string>
 
 class Mascota {
 private:
+    enum Estado {
+        NEUTRO,
+        FELIZ,
+        TRISTE,
+        HAMBRIENTO,
+        ENOJADO,
+        CANSADO,
+        MUERTO
+    };
     std::string nombre;
     float edad;
-    int salud
+    int salud;
     int energia;
     int felicidad;
     Estado estado;
+    
 public:
-    //Mascota();
     Mascota(std::string nombre, int salud,int energiag, int felicidad);
-    //virtual ~mascota();
     void mostrarMascota();
     void penalizar();
     void actualizarEstado();
     void printEstado();
     void dormir();
-    void usarItem();
+    void usarItem(Item i);
     void pasarTiempo();
 };
 
