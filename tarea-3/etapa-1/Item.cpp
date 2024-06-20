@@ -27,11 +27,11 @@ public:
     std::string getNombre() {
         return nombre;
     }
-    int getCant() const {
+    int getCant() {
         return cantidad;
     }
-    void setCant(int c) {
-        cantidad = c;
+    void setCant(int newCant) {
+        cantidad = newCant;
     }
     void mostrarItem() {
         std::cout << id << ": " << nombre << ", cantidad " << cantidad <<  std::endl;
