@@ -41,7 +41,7 @@ public:
      * @param mascota
      * Mascota que consume el Item.
      */
-    virtual void usar(Mascota &mascota);
+    virtual void usar(Mascota &mascota) = 0;
 
     // Muestra Item en consola.
     void mostrarItem();
