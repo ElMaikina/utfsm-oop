@@ -5,7 +5,7 @@
 class Medicina : public Item { 
 
 public:
-    Medicina(int id, std::string nombre);
+    Medicina(int id, std::string nombre, int cantidad);
 
     void usar(Mascota &mascota) override;
 };
