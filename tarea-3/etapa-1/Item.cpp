@@ -14,7 +14,10 @@ Item::Item(int id, string tipo, string nombre, int cantidad) :
     {}
 
 void Item::mostrarItem() {
-    cout << id << ": " << nombre << " (" << tipo << ")" << "\ncantidad: " << cantidad 
+    cout 
+    << "ID: "         << id
+    << "\nNombre: "   << nombre
+    << "\nCantidad: " << cantidad
     << endl;
 }
 
@@ -34,6 +37,6 @@ int Item::getCantidad() const {
     return cantidad;
 }
 
-void Item::setCantidad(int nuevaCantidad) {
-    this->cantidad = nuevaCantidad;
+void Item::setCantidad(int cantidad) {
+    this->cantidad = cantidad;
 }
