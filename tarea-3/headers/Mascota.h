@@ -3,11 +3,16 @@
 
 #include <string>
 
-#define MAX_STATS = 100
-#define MIN_STATS = 0
-#define MAX_EDAD = 15
+#define MAX_STATS 100
+#define MIN_STATS 0
+#define MAX_EDAD  15
 
 class Mascota {
+
+friend class Juguete;
+friend class Comida;
+friend class Medicina;
+
 private:
     enum Estado {
         NEUTRO,
