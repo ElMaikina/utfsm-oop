@@ -1,7 +1,5 @@
 #include "../headers/Mascota.h"
-#include "../headers/Item.h"
 #include <iostream>
-#include <string>
 
 using std::string;
 using std::cout;
