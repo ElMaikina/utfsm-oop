@@ -3,6 +3,10 @@
 #include <iostream>
 #include <string>
 
+using std::string;
+using std::cout;
+using std::endl;
+
 class Mascota {
     
 private:
@@ -23,14 +27,15 @@ private:
     Estado estado;
 
 public:
-    Mascota(std::string n){
-        nombre=n;
+    Mascota(std::string nombre){
+        this->nombre = nombre;
         edad = 0;
         salud = 100;
         energia = 100;
         felicidad = 50;
         actualizarEstado();
     }
+
     void penalizar(){
         if (edad<=5 && salud >=10){
             felicidad-=20;
@@ -43,15 +48,15 @@ public:
         }
         if(salud<0){
             salud=0;
-        };
+        }
         if(energia<0){
             energia=0;
-        };
+        }
         if(felicidad<0){
             felicidad=0;
-        };
-
+        }
     }
+
     void dormir(){
         salud += 15;
         if(salud>100){salud=100;}
@@ -83,63 +88,64 @@ public:
             felicidad=0;
         }
         edad += 0.5;
-
     }
+
     void actualizarEstado(){
         if (edad==15 || salud==0 || energia==0) {
-            estado = Estado.MUERTO;
+            estado = Estado::MUERTO;
         }
         else if (energia <= 15) {
-            estado = Estado.CANSADO;
+            estado = Estado::CANSADO;
         }
         else if (edad>=5 && salud<=30 && energia<=30) {
-            estado = Estado.ENOJADO;
+            estado = Estado::ENOJADO;
         }
         else if ((edad<=5 && salud <= 20) || (5<edad && edad<10 && salud <= 50)) {
-            estado = Estado.HAMBRIENTO;
+            estado = Estado::HAMBRIENTO;
         }
-        else if (felicidad<=20) {estado = Estado.TRISTE;}else if (felicidad>=60) {
-            estado = Estado.FELIZ;
+        else if (felicidad<=20) {estado = Estado::TRISTE;}else if (felicidad>=60) {
+            estado = Estado::FELIZ;
         }
         else {
-            estado = Estado.NEUTRO;
-        };
-    }
-    void Mascota::printEstado(){
-    switch(estado){
-        case NEUTRO:
-            std::cout << "Estado: (-_-) Meh....." << std::endl;
-            break;
-        case FELIZ:
-            std::cout << "Estado: (^_^)/ Weeeeeh!" << std::endl;
-            break;
-        case TRISTE:
-            std::cout << "Estado: (._.) snif...." << std::endl;
-            break;
-        case HAMBRIENTO:
-            std::cout << "Estado: (0o0) hambre hambre!" << std::endl;
-            break;
-        case ENOJADO:
-            std::cout << "Estado: (�w�) grrrr...." << std::endl;
-            break;
-        case CANSADO:
-            std::cout << "Estado: (=_=) zzzz...." << std::endl;
-            break;
-        case MUERTO:
-            std::cout << "Estado: (x_x) fin del juego" << std::endl;
-            break;
-        default:
-            std::cout << "Estado desconocido" << std::endl;
-            break;
+            estado = Estado::NEUTRO;
         }
     }
+
+    void Mascota::printEstado(){
+        switch(estado){
+            case NEUTRO:
+                cout << "Estado: (-_-) Meh....." << endl;
+                break;
+            case FELIZ:
+                cout << "Estado: (^_^)/ Weeeeeh!" << endl;
+                break;
+            case TRISTE:
+                cout << "Estado: (._.) snif...." << endl;
+                break;
+            case HAMBRIENTO:
+                cout << "Estado: (0o0) hambre hambre!" << endl;
+                break;
+            case ENOJADO:
+                cout << "Estado: (�w�) grrrr...." << endl;
+                break;
+            case CANSADO:
+                cout << "Estado: (=_=) zzzz...." << endl;
+                break;
+            case MUERTO:
+                cout << "Estado: (x_x) fin del juego" << endl;
+                break;
+        }
+    }
+
     void mostrarMascota(){
-        std::cout<<"Atributos"<<std::endl;
-        std::cout<<"-----------"<<std::endl;
-        std::cout<<"Nombre:"<<nombre<<std::endl;
-        std::cout<<"Edad:"<<edad<<std::endl;
-        std::cout<<"Salud:"<<salud<<std::endl;
-        std::cout<<"felicidad"<<felicidad<<std::endl;
-        std::cout<<estado<<std::endl;
+        cout 
+        << "Atributos"      
+        << "\n-----------"  
+        << "\nNombre:"   << nombre 
+        << "\nEdad:"     << edad     
+        << "\nSalud:"    << salud     
+        << "\nfelicidad" << felicidad 
+        << estado       
+        << endl;
     }
 };
