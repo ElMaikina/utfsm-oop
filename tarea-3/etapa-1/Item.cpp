@@ -11,7 +11,7 @@ Item::Item(int i, std::string t, std::string n, int c) {
 int Item::getId() {
 	return id;
 }
-void Item::usar(Mascota &mascota) {} 
+void Item::usarItem(Mascota &mascota) {} 
 std::string Item::getTipo() {
 	return tipo;
 }

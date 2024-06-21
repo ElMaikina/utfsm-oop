@@ -14,14 +14,14 @@ int main(int argc, char **argv) {
 	miMascota.mostrarMascota();
 
     //// Crear instancias de ítems
-    //Comida queso(1, "Queso", 5);
-    //Medicina jarabe(2, "Jarabe", 3);
-    //Juguete pelota(3, "Pelota");  // Juguete ilimitado
+    Comida queso(1, "Queso", 5);
+    Medicina jarabe(2, "Jarabe", 3);
+    Juguete pelota(3, "Pelota");  // Juguete ilimitado
 
     // Mostrar información de ítems
-    //queso.mostrarItem();
-    //jarabe.mostrarItem();
-    //pelota.mostrarItem();
+    queso.mostrarItem();
+    jarabe.mostrarItem();
+    pelota.mostrarItem();
 
     //// Usar ítems en la mascota y mostrar su estado después de cada uso
     //queso.usar(miMascota);
