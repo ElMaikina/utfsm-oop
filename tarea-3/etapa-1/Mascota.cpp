@@ -59,28 +59,7 @@ public:
         if(felicidad>100){felicidad=100;}
             energia = 100;
     }
-    void usarItem(Item i){
-        std::string type= i.getTipo();
-        switch(type){
-            case "Medicina"{
-                salud +=40;
-                std::cout<<"Aplicando medicina"<<type<<std::endl;
-                break;
-            }
-            case "Comida"{
-                salud +=20;
-                energia+=20;
 
-                std::cout<<"Dando comida"<<type<<std::endl;
-                break;
-            }
-            case "Juguete"{
-                felicidad +=30;
-                std::cout<<"Jugando con"<<type<<std::endl;
-                break;
-            }
-        }
-    }
     void Mascota::pasarTiempo(){
         if(salud>100){
             salud=100;
