@@ -32,10 +32,10 @@ private:
     
 public:
     Mascota(std::string nombre);
-    void mostrarMascota();
+    void mostrarMascota() const;
     void penalizar();
     void actualizarEstado();
-    void printEstado();
+    std::string estadoString() const;
     void dormir();
     void pasarTiempo();
 };

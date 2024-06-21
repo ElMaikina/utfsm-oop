@@ -90,40 +90,33 @@ void Mascota::actualizarEstado(){
     }
 }
 
-void Mascota::printEstado(){
-    switch(estado){
+string Mascota::estadoString() const {
+    switch (estado) {
         case NEUTRO:
-            cout << "Estado: (-_-) Meh....." << endl;
-            break;
+            return "Neutro";
         case FELIZ:
-            cout << "Estado: (^_^)/ Weeeeeh!" << endl;
-            break;
+            return "Feliz";
         case TRISTE:
-            cout << "Estado: (._.) snif...." << endl;
-            break;
+            return "Triste";
         case HAMBRIENTO:
-            cout << "Estado: (0o0) hambre hambre!" << endl;
-            break;
+            return "Hambriento";
         case ENOJADO:
-            cout << "Estado: (�w�) grrrr...." << endl;
-            break;
+            return "Enojado";
         case CANSADO:
-            cout << "Estado: (=_=) zzzz...." << endl;
-            break;
+            return "Cansado";
         case MUERTO:
-            cout << "Estado: (x_x) fin del juego" << endl;
-            break;
+            return "Muerto";
     }
 }
 
-void Mascota::mostrarMascota(){
-    cout 
-    << "Atributos"      
-    << "\n-----------"  
-    << "\nNombre:"   << nombre 
-    << "\nEdad:"     << edad     
-    << "\nSalud:"    << salud     
-    << "\nfelicidad" << felicidad 
-    << estado       
+void Mascota::mostrarMascota() const{
+    cout  
+    << "Nombre: "      << nombre 
+    << "\nEdad: "      << edad     
+    << "\nSalud: "     << salud     
+    << "\nEnergía: "   << energia
+    << "\nFelicidad: " << felicidad 
+    << "\nEstado: "    << estadoString()
+    << "\n" 
     << endl;
 }
