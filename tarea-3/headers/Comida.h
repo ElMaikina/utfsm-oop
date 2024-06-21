@@ -7,6 +7,8 @@ class Comida : public Item {
 public:
     Comida(int id, std::string nombre, int cantidad);
 
+    ~Comida() override;
+
     void usar(Mascota &mascota) override;
 };
 

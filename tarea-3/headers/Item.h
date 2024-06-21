@@ -34,6 +34,8 @@ public:
      */
     Item(int id, std::string tipo, std::string nombre, int cantidad=-1);
 
+    virtual ~Item();
+
     /*
      * Consume Item en Mascota, afectando sus estadísticas.
      * Al consumir: "cantidad" -= 1.
@@ -44,7 +46,7 @@ public:
     virtual void usar(Mascota &mascota) = 0;
 
     // Muestra Item en consola.
-    void mostrarItem();
+    void mostrarItem() const;
 
     // @returns id
     int getId() const; 

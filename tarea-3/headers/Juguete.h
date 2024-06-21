@@ -7,6 +7,8 @@ class Juguete : public Item {
 public:
     Juguete(int id, std::string nombre);
 
+    ~Juguete() override;
+
     void usar(Mascota &mascota) override;
 };
 
