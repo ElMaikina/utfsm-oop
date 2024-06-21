@@ -47,16 +47,16 @@ public:
     void mostrarItem();
 
     // @returns id
-    int getId() const; 
+    int getId(); 
 
     // @returns nombre
-    std::string getNombre() const;
+    std::string getNombre();
 
     // @returns tipo
-    std::string getTipo() const;
+    std::string getTipo();
 
     // @returns cantidad
-    int getCantidad() const;
+    int getCant();
 
     /*
      * Cambia el valor de miebro dato "cantidad"
@@ -64,7 +64,7 @@ public:
      * @param  nuevaCantidad
      * Número entero que reemplazará valor de "cantidad".
      */
-    void setCantidad(int nuevaCantidad);
+    void setCant(int nuevaCantidad);
 };
 
 #endif // ITEM_H

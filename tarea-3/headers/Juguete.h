@@ -6,7 +6,6 @@ class Juguete : public Item {
 
 public:
     Juguete(int id, std::string nombre);
-
     void usar(Mascota &mascota) override;
 };
 

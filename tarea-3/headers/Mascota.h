@@ -2,6 +2,7 @@
 #define MASCOTA_H
 
 #include <string>
+#include "../headers/Item.h"
 
 #define MAX_STATS 100
 #define MIN_STATS 0
@@ -38,6 +39,7 @@ public:
     void actualizarEstado();
     void printEstado();
     void dormir();
+	void usarItem(Item i);
     void pasarTiempo();
 };
 
