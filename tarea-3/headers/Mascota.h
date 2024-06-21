@@ -1,6 +1,11 @@
 #ifndef MASCOTA_H
-#define MASCOTA_Hs
+#define MASCOTA_H
+
 #include <string>
+
+#define MAX_STATS = 100
+#define MIN_STATS = 0
+#define MAX_EDAD = 15
 
 class Mascota {
 private:
