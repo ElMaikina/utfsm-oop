@@ -1,39 +1,28 @@
 #include <iostream>
 #include <string>
+#include "../headers/Item.h"
 
-// Definición de la clase Item
-class Item {
-private:
-    int id;
-    std::string tipo;
-    std::string nombre;
-    int cantidad;
-
-public:
-    // Constructor
-    Item(int i, std::string t, std::string n, int c) {
-        id = i;
-        tipo = t;
-        nombre = n;
-        cantidad = c;
-    }
-    // Métodos para acceder a los atributos
-    int getId() {
-        return id;
-    }
-    std::string getTipo() {
-        return tipo;
-    }
-    std::string getNombre() {
-        return nombre;
-    }
-    int getCant() {
-        return cantidad;
-    }
-    void setCant(int newCant) {
-        cantidad = newCant;
-    }
-    void mostrarItem() {
-        std::cout << id << ": " << nombre << ", cantidad " << cantidad <<  std::endl;
-    }
+Item::Item(int i, std::string t, std::string n, int c) {
+	id = i;
+	tipo = t;
+	nombre = n;
+	cantidad = c;
+}
+int Item::getId() {
+	return id;
+}
+std::string Item::getTipo() {
+	return tipo;
+}
+std::string Item::getNombre() {
+	return nombre;
+}
+int Item::getCant() {
+	return cantidad;
+}
+void Item::setCant(int newCant) {
+	cantidad = newCant;
+}
+void Item::mostrarItem() {
+	std::cout << id << ": " << nombre << ", cantidad " << cantidad <<  std::endl;
 };

@@ -22,7 +22,8 @@ private:
     Estado estado;
     
 public:
-    Mascota(std::string nombre, int salud,int energiag, int felicidad);
+	Mascota(std::string n);
+	~Mascota();
     void mostrarMascota();
     void penalizar();
     void actualizarEstado();

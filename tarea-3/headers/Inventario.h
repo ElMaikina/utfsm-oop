@@ -21,7 +21,7 @@ public:
     void agregarItem(const Item& item);
 
     // Método para imprimir todos los items del inventario
-    void imprimirInventario() const;
+    void mostrarInventario();
 };
 
 #endif // INVENTARIO_H
