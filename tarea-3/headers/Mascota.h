@@ -31,7 +31,7 @@ private:
     Estado estado;
     
 public:
-    Mascota(std::string nombre);
+    Mascota(std::string nombre, int salud=50, int energia=50, int felicidad=50);
     void mostrarMascota() const;
     void penalizar();
     void actualizarEstado();
