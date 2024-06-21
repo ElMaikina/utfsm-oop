@@ -28,7 +28,6 @@ public:
     void actualizarEstado();
     void printEstado();
     void dormir();
-    void usarItem(Item i);
     void pasarTiempo();
 };
 
