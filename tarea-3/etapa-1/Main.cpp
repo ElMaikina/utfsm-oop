@@ -22,10 +22,15 @@ int main(int argc, char **argv) {
 
     // Usar ítems en la mascota y mostrar su estado después de cada uso
     queso.usar(miMascota);
+    miMascota.actualizarEstado();
     miMascota.mostrarMascota();
+
     jarabe.usar(miMascota);
+    miMascota.actualizarEstado();
     miMascota.mostrarMascota();
+
     pelota.usar(miMascota);
+    miMascota.actualizarEstado();
     miMascota.mostrarMascota();
 
     return 0;

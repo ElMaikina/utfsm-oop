@@ -6,12 +6,13 @@ using std::cout;
 using std::endl;
 
 
-Mascota::Mascota(string nombre){
-    this->nombre = nombre;
-    edad = 0;
-    salud = 100;
-    energia = 100;
-    felicidad = 50;
+Mascota::Mascota(string nombre, int salud, int energia, int felicidad) :
+    nombre(nombre),
+    salud(salud),
+    energia(energia),
+    felicidad(felicidad) 
+{
+    this->edad = 0;
     actualizarEstado();
 }
 
