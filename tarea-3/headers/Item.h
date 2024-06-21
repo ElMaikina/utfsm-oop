@@ -34,7 +34,7 @@ public:
      */
     Item(int id, std::string tipo, std::string nombre, int cantidad=-1);
 
-    virtual ~Item();
+    virtual ~Item() = default;
 
     /*
      * Consume Item en Mascota, afectando sus estadísticas.

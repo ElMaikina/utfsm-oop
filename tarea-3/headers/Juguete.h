@@ -7,7 +7,7 @@ class Juguete : public Item {
 public:
     Juguete(int id, std::string nombre);
 
-    ~Juguete() override;
+    ~Juguete() override = default;
 
     void usar(Mascota &mascota) override;
 };
