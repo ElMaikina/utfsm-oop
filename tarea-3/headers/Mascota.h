@@ -1,6 +1,5 @@
 #ifndef MASCOTA_H
 #define MASCOTA_Hs
-#include "../headers/Item.h"
 #include <string>
 
 class Mascota {
