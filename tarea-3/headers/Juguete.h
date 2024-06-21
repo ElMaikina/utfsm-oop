@@ -10,4 +10,4 @@ public:
     void usar(Mascota &mascota) override;
 };
 
-#endif //JUGUETE_Hs
+#endif //JUGUETE_H

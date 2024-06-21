@@ -10,4 +10,4 @@ public:
     void usar(Mascota &mascota) override;
 };
 
-#endif //MEDICINA_Hs
+#endif //MEDICINA_H

@@ -10,4 +10,4 @@ public:
     void usar(Mascota &mascota) override;
 };
 
-#endif //COMIDA_Hs
+#endif //COMIDA_H
