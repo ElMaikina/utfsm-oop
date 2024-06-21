@@ -8,7 +8,7 @@
 int main(int argc, char **argv) {
     // Crear y mostrar estado inicial de la mascota
     Mascota miMascota("Garfield");
-    miMascota.printEstado();
+    miMascota.mostrarMascota();
 
     // Crear instancias de ítems
     Comida queso(1, "Queso", 5);
@@ -22,8 +22,11 @@ int main(int argc, char **argv) {
 
     // Usar ítems en la mascota y mostrar su estado después de cada uso
     queso.usar(miMascota);
+    miMascota.mostrarMascota();
     jarabe.usar(miMascota);
+    miMascota.mostrarMascota();
     pelota.usar(miMascota);
+    miMascota.mostrarMascota();
 
     return 0;
 }

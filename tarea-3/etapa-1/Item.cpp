@@ -12,11 +12,12 @@ Item::Item(int id, string tipo, string nombre, int cantidad) :
     cantidad(cantidad)
     {}
 
-void Item::mostrarItem() {
+void Item::mostrarItem() const {
     cout 
     << "ID: "         << id
     << "\nNombre: "   << nombre
     << "\nCantidad: " << cantidad
+    << "\n" 
     << endl;
 }
 
