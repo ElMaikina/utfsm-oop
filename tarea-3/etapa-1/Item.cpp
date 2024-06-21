@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include "../headers/Item.h"
 
 using std::string;
