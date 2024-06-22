@@ -14,6 +14,9 @@ Mascota::Mascota(std::string n){
 Mascota::~Mascota(){
 
 }
+Estado Mascota::getEstado() {
+	return estado;
+}
 void Mascota::penalizar(){
 	if (edad<=5 && salud >=10){
 		felicidad-=20;
@@ -141,6 +144,7 @@ void Mascota::mostrarMascota(){
 	std::cout<<"Nombre: "<<nombre<<std::endl;
 	std::cout<<"Edad: "<<edad<<std::endl;
 	std::cout<<"Salud: "<<salud<<std::endl;
+	std::cout<<"Energia: "<<energia<<std::endl;
 	std::cout<<"Felicidad: "<<felicidad<<std::endl;
 	printEstado();
 	std::cout<<std::endl;

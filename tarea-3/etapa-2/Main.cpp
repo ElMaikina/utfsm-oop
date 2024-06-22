@@ -103,6 +103,12 @@ int main(int argc, char **argv) {
 
     // Crear instancias de ítems
 	std::vector<Item> items = leerItems(nombreArchivo);
+	int cantidadItems = (int)items.size();
+	Inventario inventario(cantidadItems);
+
+	for (const Item& item : items) {
+		inventario.agregarItem(item);
+	}
 
 	// Ciclo general del juego
 	bool playing = true;
@@ -112,31 +118,50 @@ int main(int argc, char **argv) {
     while (playing) {
         std::cout << "Tiempo de simulacion: " << tiempo << std::endl;
 		mascota.mostrarMascota();
-        std::cout << "Inventario:" << std::endl;
 
-		// Imprimir la información de los items
-		for (const Item& item : items) {
-			item.mostrarItem();
-		}
+		// Muestra el inventario por pantalla
+        std::cout << "Inventario:" << std::endl;
+		inventario.mostrarInventario();
+
         int opcion;
         std::cout << "\nSeleccione un ítem del inventario por su ID: ";
         std::cin >> opcion;
         std::cout << std::endl;
 
 		// Interactua con el item elegido
-		for (const Item& item : items) {
-			if (item.getId() == opcion) {
-        		std::cout << "Usando item..." << std::endl;
-				item.mostrarItem();
-        		std::cout << std::endl;
-				//TODO: Cambiar a item.usarItem(mascota);
-			}
+		//for (const Item& item : items) {
+		//	if (item.getId() == opcion) {
+        //		std::cout << "Usando item..." << std::endl;
+		//		item.mostrarItem();
+        //		std::cout << std::endl;
+		//		//TODO: Cambiar a item.usarItem(mascota);
+		//	}
+		//}
+
+		// Interactua con el item elegido
+		inventario.usarItem(opcion, mascota);
+
+		// Pasa el tiempo de la Mascota y la penaliza en base a eso
+		mascota.pasarTiempo();
+		mascota.penalizar();
+		mascota.actualizarEstado();
+
+		// A continuacion revisa las condiciones de muerte
+		
+		// Si el Pou esta muerto terminar el juego
+		if (mascota.getEstado() == MUERTO) {
+        	std::cout << "La Mascota fallecio..." << std::endl;
+			mascota.printEstado();
+			playing = false;
+			return 0;
 		}
 
-		mascota.pasarTiempo();
+		// Si se acabo el tiempo terminar el juego
 		tiempo += 0.5;
 		if (tiempo > 15.0) {
+        	std::cout << "Se acabo el tiempo..." << std::endl;
 			playing = false;
+			return 0;
 		}
     }
     return 0;

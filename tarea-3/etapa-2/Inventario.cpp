@@ -1,24 +1,34 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "../headers/Item.h"
 #include "../headers/Inventario.h"
 
 Inventario::Inventario(int c) {
 	capacidad = c;
-	items = (Item*)malloc(sizeof(Item) * c);
 	cantidad = 0;
 }
 Inventario::~Inventario() {
-	delete[] items;
+
 }
-void Inventario::agregarItem(const Item& item) {
+void Inventario::agregarItem(Item item) {
 	if (cantidad < capacidad) {
-		items[cantidad] = item;
+        items.push_back(item);
 		cantidad++;
 	}
 }
-void Inventario::mostrarInventario() {
-	for(int i = 0; i < cantidad; i++) {
-		items[i].mostrarItem();
+void Inventario::usarItem(int id, Mascota &mascota) {
+	for (const Item& item : items) {
+		if (item.getId() == id) {
+			//std::cout << "Usando item..." << std::endl;
+			//item.mostrarItem();
+			//std::cout << std::endl;
+			item.usarItem(mascota);
+		}
+	}
 }
+void Inventario::mostrarInventario() {
+	for (const Item& item : items) {
+		item.mostrarItem();
+	}
 };
