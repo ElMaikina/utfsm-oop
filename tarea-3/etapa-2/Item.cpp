@@ -28,6 +28,6 @@ int Item::getCant() {
 void Item::setCant(int newCant) {
 	cantidad = newCant;
 }
-void Item::mostrarItem() {
+void Item::mostrarItem() const {
 	std::cout << "ID: " << id << "\nNombre: " << nombre << "\nCantidad " << cantidad << "\n" << std::endl;
 };

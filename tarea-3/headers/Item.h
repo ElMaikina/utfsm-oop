@@ -44,7 +44,7 @@ public:
     virtual void usarItem(Mascota &mascota);
 
     // Muestra Item en consola.
-    void mostrarItem();
+    void mostrarItem() const;
 
     // @returns id
     int getId(); 
