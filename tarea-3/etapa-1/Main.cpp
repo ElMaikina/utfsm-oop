@@ -5,7 +5,6 @@
 #include "../headers/Juguete.h"
 #include "../headers/Comida.h"
 #include "../headers/Medicina.h"
-#include "../headers/Inventario.h"
 #include "../headers/Mascota.h"
 
 int main(int argc, char **argv) {

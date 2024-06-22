@@ -100,26 +100,27 @@ int main(int argc, char **argv) {
 
     // Leer la mascota desde el archivo CSV
     Mascota mascota = leerMascota(nombreArchivo);
-	mascota.mostrarMascota();
 
     // Crear instancias de ítems
 	std::vector<Item> items = leerItems(nombreArchivo);
 
 	// Ciclo general del juego
 	bool playing = true;
+	float tiempo = 0.5;
 
 	// Ciclo infinito para recibir comandos del jugador
     while (playing) {
-        std::cout << "\nAcciones";
-        std::cout << "--------";
-        std::cout << "0: dormir";
+        std::cout << "Tiempo de simulacion: " << tiempo << std::endl;
+		mascota.mostrarMascota();
+        std::cout << "Inventario:" << std::endl;
 		// Imprimir la información de los items
 		for (const Item& item : items) {
 			item.mostrarItem();
 		}
-        std::cout << "\nSeleccione un elemento del inventario, 'c' para continuar, y 'x' para salir: ";
         int opcion;
+        std::cout << "\nSeleccione un ítem del inventario por su ID: ";
         std::cin >> opcion;
+        std::cout << std::endl;
 
         switch (opcion) {
             case 1: {

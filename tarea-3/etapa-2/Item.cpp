@@ -29,5 +29,5 @@ void Item::setCant(int newCant) {
 	cantidad = newCant;
 }
 void Item::mostrarItem() const {
-	std::cout << "ID: " << id << "\nNombre: " << nombre << "\nCantidad " << cantidad << "\n" << std::endl;
+	std::cout << "ID: " << id << ", Nombre: " << nombre << ", Cantidad " << cantidad << std::endl;
 };

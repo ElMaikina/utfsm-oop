@@ -138,8 +138,6 @@ switch(estado){
 	}
 }
 void Mascota::mostrarMascota(){
-	std::cout<<"\nAtributos"<<std::endl;
-	std::cout<<"-----------"<<std::endl;
 	std::cout<<"Nombre: "<<nombre<<std::endl;
 	std::cout<<"Edad: "<<edad<<std::endl;
 	std::cout<<"Salud: "<<salud<<std::endl;
