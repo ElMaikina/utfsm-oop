@@ -106,13 +106,14 @@ int main(int argc, char **argv) {
 
 	// Ciclo general del juego
 	bool playing = true;
-	float tiempo = 0.5;
+	float tiempo = 0.0;
 
 	// Ciclo infinito para recibir comandos del jugador
     while (playing) {
         std::cout << "Tiempo de simulacion: " << tiempo << std::endl;
 		mascota.mostrarMascota();
         std::cout << "Inventario:" << std::endl;
+
 		// Imprimir la información de los items
 		for (const Item& item : items) {
 			item.mostrarItem();
@@ -122,20 +123,21 @@ int main(int argc, char **argv) {
         std::cin >> opcion;
         std::cout << std::endl;
 
-        switch (opcion) {
-            case 1: {
-
+		// Interactua con el item elegido
+		for (const Item& item : items) {
+			if (item.getId() == opcion) {
+        		std::cout << "Usando item..." << std::endl;
+				item.mostrarItem();
+        		std::cout << std::endl;
+				//TODO: Cambiar a item.usarItem(mascota);
 			}
-            case 2: {
+		}
 
-            }
-            case 3: {
-
-            }
-            case 4: {
-
-            }
-        }
+		mascota.pasarTiempo();
+		tiempo += 0.5;
+		if (tiempo > 15.0) {
+			playing = false;
+		}
     }
     return 0;
 }

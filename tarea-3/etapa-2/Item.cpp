@@ -9,7 +9,7 @@ Item::Item(int i, std::string t, std::string n, int c) {
 	nombre = n;
 	cantidad = c;
 }
-int Item::getId() {
+int Item::getId() const {
 	return id;
 }
 void Item::usarItem(Mascota &mascota) {

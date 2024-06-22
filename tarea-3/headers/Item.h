@@ -47,7 +47,7 @@ public:
     void mostrarItem() const;
 
     // @returns id
-    int getId(); 
+    int getId() const; 
 
     // @returns nombre
     std::string getNombre();
