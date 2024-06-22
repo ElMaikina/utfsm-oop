@@ -20,10 +20,10 @@ void Inventario::agregarItem(Item item) {
 void Inventario::usarItem(int id, Mascota &mascota) {
 	for (const Item& item : items) {
 		if (item.getId() == id) {
-			//std::cout << "Usando item..." << std::endl;
-			//item.mostrarItem();
-			//std::cout << std::endl;
-			item.usarItem(mascota);
+			std::cout << "Usando item..." << std::endl;
+			item.mostrarItem();
+			std::cout << std::endl;
+			//item.usarItem(mascota);
 		}
 	}
 }

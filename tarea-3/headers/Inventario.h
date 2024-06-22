@@ -1,12 +1,14 @@
 #ifndef INVENTARIO_H
 #define INVENTARIO_H
 
-#include "Item.h" // Incluimos el header de Item
+#include <vector>
+#include "Item.h"
+#include "Mascota.h" 
 
 // Definición de la clase Inventario
 class Inventario {
 private:
-    Item* items;    // Arreglo dinámico de objetos Item
+    std::vector<Item> items; // Vector de objetos Item
     int capacidad;  // Capacidad máxima del inventario
     int cantidad;   // Cantidad actual de elementos en el inventario
 
@@ -18,7 +20,10 @@ public:
     ~Inventario();
 
     // Método para agregar un nuevo item al inventario
-    void agregarItem(const Item& item);
+    void agregarItem(Item item);
+
+    // Método para usar un nuevo item del inventario
+    void usarItem(int id, Mascota &mascota);
 
     // Método para imprimir todos los items del inventario
     void mostrarInventario();

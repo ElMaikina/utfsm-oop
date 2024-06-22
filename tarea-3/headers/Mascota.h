@@ -8,6 +8,15 @@
 #define MIN_STATS 0
 #define MAX_EDAD  15
 
+enum Estado {
+	NEUTRO,
+	FELIZ,
+	TRISTE,
+	HAMBRIENTO,
+	ENOJADO,
+	CANSADO,
+	MUERTO
+};
 class Mascota {
 
 friend class Juguete;
@@ -15,15 +24,6 @@ friend class Comida;
 friend class Medicina;
 
 private:
-    enum Estado {
-        NEUTRO,
-        FELIZ,
-        TRISTE,
-        HAMBRIENTO,
-        ENOJADO,
-        CANSADO,
-        MUERTO
-    };
     std::string nombre;
     float edad;
     int salud;
@@ -34,6 +34,7 @@ private:
 public:
 	Mascota(std::string n);
 	~Mascota();
+    Estado getEstado();
     void mostrarMascota();
     void penalizar();
     void actualizarEstado();
