@@ -99,15 +99,42 @@ int main(int argc, char **argv) {
     std::string nombreArchivo = "config.csv";
 
     // Leer la mascota desde el archivo CSV
-    Mascota miMascota = leerMascota(nombreArchivo);
-	miMascota.mostrarMascota();
+    Mascota mascota = leerMascota(nombreArchivo);
+	mascota.mostrarMascota();
 
     // Crear instancias de ítems
 	std::vector<Item> items = leerItems(nombreArchivo);
 
-    // Imprimir la información de los items
-    for (const Item& item : items) {
-        item.mostrarItem();
+	// Ciclo general del juego
+	bool playing = true;
+
+	// Ciclo infinito para recibir comandos del jugador
+    while (playing) {
+        std::cout << "\nAcciones";
+        std::cout << "--------";
+        std::cout << "0: dormir";
+		// Imprimir la información de los items
+		for (const Item& item : items) {
+			item.mostrarItem();
+		}
+        std::cout << "\nSeleccione un elemento del inventario, 'c' para continuar, y 'x' para salir: ";
+        int opcion;
+        std::cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+
+			}
+            case 2: {
+
+            }
+            case 3: {
+
+            }
+            case 4: {
+
+            }
+        }
     }
     return 0;
 }
