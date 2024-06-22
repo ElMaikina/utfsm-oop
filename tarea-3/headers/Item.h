@@ -32,7 +32,7 @@ public:
      * @param cantidad  Cantidad de Item.
      * Si cantidad no se especifica, cantidad = -1.
      */
-    Item(int id, std::string tipo, std::string nombre, int cantidad=-1);
+    Item(int id, std::string tipo, std::string nombre, int cantidad);
 
     /*
      * Consume Item en Mascota, afectando sus estadísticas.
@@ -41,7 +41,7 @@ public:
      * @param mascota
      * Mascota que consume el Item.
      */
-    virtual void usar(Mascota &mascota);
+    virtual void usarItem(Mascota &mascota);
 
     // Muestra Item en consola.
     void mostrarItem();
@@ -65,6 +65,11 @@ public:
      * Número entero que reemplazará valor de "cantidad".
      */
     void setCant(int nuevaCantidad);
+
+	// Se definen las tres subclases que heredan de Item
+	friend class Comida;
+	friend class Medicina;
+	friend class Juguete;
 };
 
 #endif // ITEM_H
