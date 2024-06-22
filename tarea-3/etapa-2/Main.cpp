@@ -129,16 +129,6 @@ int main(int argc, char **argv) {
         std::cout << std::endl;
 
 		// Interactua con el item elegido
-		//for (const Item& item : items) {
-		//	if (item.getId() == opcion) {
-        //		std::cout << "Usando item..." << std::endl;
-		//		item.mostrarItem();
-        //		std::cout << std::endl;
-		//		//TODO: Cambiar a item.usarItem(mascota);
-		//	}
-		//}
-
-		// Interactua con el item elegido
 		inventario.usarItem(opcion, mascota);
 
 		// Pasa el tiempo de la Mascota y la penaliza en base a eso
