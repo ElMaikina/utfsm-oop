@@ -27,4 +27,11 @@ License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
 
 ## Ejecución
 
-Ejecutar _make_ desde la terminal de su preferencia, esto compilará y ejecutará el programa inmediatamente.
+Ejecutar _make_ desde la terminal de su preferencia en la etapa especifica, esto compilará el programa. Posterior a eso, ejecutar el
+archivo binario generado. Por ejemplo, para la etapa dos:
+
+```
+cd etapa-2/
+make
+./App
+```
