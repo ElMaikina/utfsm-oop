@@ -9,7 +9,7 @@ Item::Item(int i, std::string t, std::string n, int c) {
 	nombre = n;
 	cantidad = c;
 }
-int Item::getId() {
+int Item::getId() const {
 	return id;
 }
 void Item::usarItem(Mascota &mascota) {
@@ -29,5 +29,5 @@ void Item::setCant(int newCant) {
 	cantidad = newCant;
 }
 void Item::mostrarItem() const {
-	std::cout << "ID: " << id << "\nNombre: " << nombre << "\nCantidad " << cantidad << "\n" << std::endl;
+	std::cout << "ID: " << id << ", Nombre: " << nombre << ", Cantidad " << cantidad << std::endl;
 };
