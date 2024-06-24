@@ -35,6 +35,10 @@ public:
 	Mascota(std::string n);
 	~Mascota();
     Estado getEstado();
+    int getSalud();
+    int getEnergia();
+    void setSalud(int s);
+    void setEnergia(int e);
     void mostrarMascota();
     void penalizar();
     void actualizarEstado();
