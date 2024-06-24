@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <memory>
 #include <vector>
 #include "../headers/Item.h"
 #include "../headers/Juguete.h"
@@ -44,8 +45,11 @@ Mascota leerMascota(const std::string& nombreArchivo) {
 
 
 // Función para leer el archivo CSV desde la segunda línea y crear una lista de Items
-std::vector<Item> leerItems(const std::string& nombreArchivo) {
-    std::vector<Item> items;
+//std::vector<Item> leerItems(const std::string& nombreArchivo) {
+std::vector<std::shared_ptr<Item>> leerItems(const std::string& nombreArchivo) {
+    //std::vector<Item> items;
+	std::vector<std::shared_ptr<Item>> items;
+
     std::ifstream archivo(nombreArchivo);
 
     if (!archivo.is_open()) {
@@ -76,13 +80,13 @@ std::vector<Item> leerItems(const std::string& nombreArchivo) {
 
             // Crear una instancia de Item y añadirla al vector
 			if (type == "Medicina") {
-            	items.push_back(Medicina(id, nombre, cantidad));
+            	items.push_back(std::make_shared<Medicina>(id, nombre, cantidad));
 			}
 			else if (type == "Comida") {
-            	items.push_back(Comida(id, nombre, cantidad));
+            	items.push_back(std::make_shared<Comida>(id, nombre, cantidad));
 			}
 			else if (type == "Juguete") {
-            	items.push_back(Juguete(id, nombre));
+            	items.push_back(std::make_shared<Juguete>(id, nombre));
 			}
         } else {
             std::cerr << "Línea con formato incorrecto: " << linea << std::endl;
@@ -102,11 +106,14 @@ int main(int argc, char **argv) {
     Mascota mascota = leerMascota(nombreArchivo);
 
     // Crear instancias de ítems
-	std::vector<Item> items = leerItems(nombreArchivo);
+	//std::vector<Item> items = leerItems(nombreArchivo);
+	std::vector<std::shared_ptr<Item>> items = leerItems(nombreArchivo);
+
 	int cantidadItems = (int)items.size();
 	Inventario inventario(cantidadItems);
 
-	for (Item& item : items) {
+	//for (Item& item : items) {
+	for (const auto& item : items) {
 		inventario.agregarItem(item);
 	}
 

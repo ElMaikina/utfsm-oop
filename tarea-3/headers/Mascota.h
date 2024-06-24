@@ -37,8 +37,10 @@ public:
     Estado getEstado();
     int getSalud();
     int getEnergia();
+    int getFelicidad();
     void setSalud(int s);
     void setEnergia(int e);
+    void setFelicidad(int f);
     void mostrarMascota();
     void penalizar();
     void actualizarEstado();

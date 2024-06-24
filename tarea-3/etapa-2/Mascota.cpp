@@ -23,11 +23,17 @@ int Mascota::getSalud() {
 int Mascota::getEnergia() {
 	return energia;
 }
+int Mascota::getFelicidad() {
+	return felicidad;
+}
 void Mascota::setSalud(int s) {
 	salud = s;
 }
 void Mascota::setEnergia(int e) {
 	energia = e;
+}
+void Mascota::setFelicidad(int d) {
+	felicidad = d;
 }
 void Mascota::penalizar(){
 	if (edad<=5 && salud >=10){
