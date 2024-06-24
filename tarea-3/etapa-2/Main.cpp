@@ -75,13 +75,13 @@ std::vector<Item> leerItems(const std::string& nombreArchivo) {
             int cantidad = std::stoi(campos[3]);
 
             // Crear una instancia de Item y añadirla al vector
-			if (type.compare("Medicina")) {
+			if (type == "Medicina") {
             	items.push_back(Medicina(id, nombre, cantidad));
 			}
-			else if (type.compare("Comida")) {
-            	items.push_back(Medicina(id, nombre, cantidad));
+			else if (type == "Comida") {
+            	items.push_back(Comida(id, nombre, cantidad));
 			}
-			else if (type.compare("Juguete")) {
+			else if (type == "Juguete") {
             	items.push_back(Juguete(id, nombre));
 			}
         } else {
@@ -106,7 +106,7 @@ int main(int argc, char **argv) {
 	int cantidadItems = (int)items.size();
 	Inventario inventario(cantidadItems);
 
-	for (const Item& item : items) {
+	for (Item& item : items) {
 		inventario.agregarItem(item);
 	}
 
@@ -127,16 +127,6 @@ int main(int argc, char **argv) {
         std::cout << "\nSeleccione un ítem del inventario por su ID: ";
         std::cin >> opcion;
         std::cout << std::endl;
-
-		// Interactua con el item elegido
-		//for (const Item& item : items) {
-		//	if (item.getId() == opcion) {
-        //		std::cout << "Usando item..." << std::endl;
-		//		item.mostrarItem();
-        //		std::cout << std::endl;
-		//		//TODO: Cambiar a item.usarItem(mascota);
-		//	}
-		//}
 
 		// Interactua con el item elegido
 		inventario.usarItem(opcion, mascota);

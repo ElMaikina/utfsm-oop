@@ -17,6 +17,18 @@ Mascota::~Mascota(){
 Estado Mascota::getEstado() {
 	return estado;
 }
+int Mascota::getSalud() {
+	return salud;
+}
+int Mascota::getEnergia() {
+	return energia;
+}
+void Mascota::setSalud(int s) {
+	salud = s;
+}
+void Mascota::setEnergia(int e) {
+	energia = e;
+}
 void Mascota::penalizar(){
 	if (edad<=5 && salud >=10){
 		felicidad-=20;
