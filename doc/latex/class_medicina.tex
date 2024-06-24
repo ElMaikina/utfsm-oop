@@ -1,0 +1,64 @@
+\doxysection{Medicina Class Reference}
+\hypertarget{class_medicina}{}\label{class_medicina}\index{Medicina@{Medicina}}
+Inheritance diagram for Medicina\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_medicina}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_medicina_adc8dd913234cc074b964e976b803d484}\label{class_medicina_adc8dd913234cc074b964e976b803d484} 
+{\bfseries Medicina} (int id, std\+::string nombre, int cantidad)
+\item 
+void \mbox{\hyperlink{class_medicina_acf3938b79874986b9822a0576070f21a}{usar}} (\mbox{\hyperlink{class_mascota}{Mascota}} \&mascota) override
+\begin{DoxyCompactList}\small\item\em Consume \doxylink{class_item}{Item} en \doxylink{class_mascota}{Mascota}, afectando sus estadísticas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_item}{Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_item_a93f5d1147b5184b290aa6404372f2b0f}{Item}} (int id, std\+::string tipo, std\+::string nombre, int cantidad=-\/1)
+\begin{DoxyCompactList}\small\item\em Método constructor de \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_item_af11f5c0709f76d8683d95d8476be85a4}{\texorpdfstring{$\sim$}{\string~}\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Método destructor de \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_item_a146124c3120b5db01ce78f41c226b45b}{mostrar\+Item}} () const
+\begin{DoxyCompactList}\small\item\em Muestra representación de \doxylink{class_item}{Item} en consola. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a74b41f137200eea8fcdeb26bba0a332b}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retorna valor entero Id asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_item_ae5b21a848afb89bd406a5e8d11890f1a}{get\+Nombre}} () const
+\begin{DoxyCompactList}\small\item\em Retorna string Nombre asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_item_ae5cca050e4d2a5dda2c5116dc9b37537}{get\+Tipo}} () const
+\begin{DoxyCompactList}\small\item\em Retorna string Tipo asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a99d759922a606b9338e3ef6c21446758}{get\+Cantidad}} () const
+\begin{DoxyCompactList}\small\item\em Retorna valor entero Cantidad asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_item_a505f8256e08508d6d3ef04c0dbf06380}{set\+Cantidad}} (int nueva\+Cantidad)
+\begin{DoxyCompactList}\small\item\em Cambia el valor de Cantidad asociada a \doxylink{class_item}{Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_medicina_acf3938b79874986b9822a0576070f21a}\index{Medicina@{Medicina}!usar@{usar}}
+\index{usar@{usar}!Medicina@{Medicina}}
+\doxysubsubsection{\texorpdfstring{usar()}{usar()}}
+{\footnotesize\ttfamily \label{class_medicina_acf3938b79874986b9822a0576070f21a} 
+void Medicina\+::usar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mascota}{Mascota}} \&}]{mascota}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Consume \doxylink{class_item}{Item} en \doxylink{class_mascota}{Mascota}, afectando sus estadísticas. 
+
+Al consumir\+: "{}cantidad"{} -\/= 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mascota} & \doxylink{class_mascota}{Mascota} que consume el \doxylink{class_item}{Item}. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_item_a1e17387adb2f25fbab12a2d4eecdfdfd}{Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tarea-\/3/headers/Medicina.\+h\end{DoxyCompactItemize}

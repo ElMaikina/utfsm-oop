@@ -1,0 +1,33 @@
+\doxysection{Inventario.\+h}
+\hypertarget{_inventario_8h_source}{}\label{_inventario_8h_source}\index{tarea-\/3/headers/Inventario.h@{tarea-\/3/headers/Inventario.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INVENTARIO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INVENTARIO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Item.h"{}}\ \textcolor{comment}{//\ Incluimos\ el\ header\ de\ Item}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Definición\ de\ la\ clase\ Inventario}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inventario}{Inventario}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_item}{Item}}*\ items;\ \ \ \ \textcolor{comment}{//\ Arreglo\ dinámico\ de\ objetos\ Item}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ capacidad;\ \ \textcolor{comment}{//\ Capacidad\ máxima\ del\ inventario}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ cantidad;\ \ \ \textcolor{comment}{//\ Cantidad\ actual\ de\ elementos\ en\ el\ inventario}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_inventario}{Inventario}}(\textcolor{keywordtype}{int}\ capacidad);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_inventario}{\string~Inventario}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Método\ para\ agregar\ un\ nuevo\ item\ al\ inventario}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ agregarItem(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_item}{Item}}\&\ item);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Método\ para\ imprimir\ todos\ los\ items\ del\ inventario}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ imprimirInventario()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INVENTARIO\_H}}
+
+\end{DoxyCode}

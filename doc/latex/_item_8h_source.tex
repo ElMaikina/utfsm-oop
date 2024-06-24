@@ -1,0 +1,46 @@
+\doxysection{Item.\+h}
+\hypertarget{_item_8h_source}{}\label{_item_8h_source}\index{tarea-\/3/headers/Item.h@{tarea-\/3/headers/Item.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ITEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ITEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Declaración\ incompleta\ de\ Mascota.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mascota}{Mascota}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_item}{Item}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ tipo;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ nombre;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ cantidad;}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_item_a93f5d1147b5184b290aa6404372f2b0f}{Item}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ std::string\ tipo,\ std::string\ nombre,\ \textcolor{keywordtype}{int}\ cantidad=-\/1);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_item_af11f5c0709f76d8683d95d8476be85a4}{\string~Item}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_item_a1e17387adb2f25fbab12a2d4eecdfdfd}{usar}}(\mbox{\hyperlink{class_mascota}{Mascota}}\ \&mascota)\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_item_a146124c3120b5db01ce78f41c226b45b}{mostrarItem}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a74b41f137200eea8fcdeb26bba0a332b}{getId}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ std::string\ \mbox{\hyperlink{class_item_ae5b21a848afb89bd406a5e8d11890f1a}{getNombre}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \ \ \ \ std::string\ \mbox{\hyperlink{class_item_ae5cca050e4d2a5dda2c5116dc9b37537}{getTipo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a99d759922a606b9338e3ef6c21446758}{getCantidad}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_item_a505f8256e08508d6d3ef04c0dbf06380}{setCantidad}}(\textcolor{keywordtype}{int}\ nuevaCantidad);}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ITEM\_H}}
+
+\end{DoxyCode}

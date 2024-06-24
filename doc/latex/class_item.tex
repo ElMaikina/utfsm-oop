@@ -1,0 +1,193 @@
+\doxysection{Item Class Reference}
+\hypertarget{class_item}{}\label{class_item}\index{Item@{Item}}
+
+
+Clase abstracta padre las subclases\+: \doxylink{class_juguete}{Juguete}, \doxylink{class_comida}{Comida} y \doxylink{class_medicina}{Medicina}.  
+
+
+
+
+{\ttfamily \#include $<$Item.\+h$>$}
+
+Inheritance diagram for Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_item_a93f5d1147b5184b290aa6404372f2b0f}{Item}} (int id, std\+::string tipo, std\+::string nombre, int cantidad=-\/1)
+\begin{DoxyCompactList}\small\item\em Método constructor de \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_item_af11f5c0709f76d8683d95d8476be85a4}{\texorpdfstring{$\sim$}{\string~}\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Método destructor de \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_item_a1e17387adb2f25fbab12a2d4eecdfdfd}{usar}} (\mbox{\hyperlink{class_mascota}{Mascota}} \&mascota)=0
+\begin{DoxyCompactList}\small\item\em Consume \doxylink{class_item}{Item} en \doxylink{class_mascota}{Mascota}, afectando sus estadísticas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_item_a146124c3120b5db01ce78f41c226b45b}{mostrar\+Item}} () const
+\begin{DoxyCompactList}\small\item\em Muestra representación de \doxylink{class_item}{Item} en consola. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a74b41f137200eea8fcdeb26bba0a332b}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retorna valor entero Id asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_item_ae5b21a848afb89bd406a5e8d11890f1a}{get\+Nombre}} () const
+\begin{DoxyCompactList}\small\item\em Retorna string Nombre asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_item_ae5cca050e4d2a5dda2c5116dc9b37537}{get\+Tipo}} () const
+\begin{DoxyCompactList}\small\item\em Retorna string Tipo asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a99d759922a606b9338e3ef6c21446758}{get\+Cantidad}} () const
+\begin{DoxyCompactList}\small\item\em Retorna valor entero Cantidad asociado a \doxylink{class_item}{Item}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_item_a505f8256e08508d6d3ef04c0dbf06380}{set\+Cantidad}} (int nueva\+Cantidad)
+\begin{DoxyCompactList}\small\item\em Cambia el valor de Cantidad asociada a \doxylink{class_item}{Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase abstracta padre las subclases\+: \doxylink{class_juguete}{Juguete}, \doxylink{class_comida}{Comida} y \doxylink{class_medicina}{Medicina}. 
+
+Esta clase posee todos los métodos disponibles para cada subclase de \doxylink{class_item}{Item}. Lógica tras la ejecución de funciones miembro (excepto SETers y GETers) varían según sub-\/clase. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_item_a93f5d1147b5184b290aa6404372f2b0f}\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}}
+{\footnotesize\ttfamily \label{class_item_a93f5d1147b5184b290aa6404372f2b0f} 
+Item\+::\+Item (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{std\+::string}]{tipo}{, }\item[{std\+::string}]{nombre}{, }\item[{int}]{cantidad}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+
+
+Método constructor de \doxylink{class_item}{Item}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Número identificador del \doxylink{class_item}{Item}.\\
+\hline
+{\em tipo} & Tipo de \doxylink{class_item}{Item}, define de sub-\/clase.\\
+\hline
+{\em nombre} & Nombre de \doxylink{class_item}{Item}.\\
+\hline
+{\em cantidad} & Cantidad de \doxylink{class_item}{Item}. Default = -\/1. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_item_af11f5c0709f76d8683d95d8476be85a4}\index{Item@{Item}!````~Item@{\texorpdfstring{$\sim$}{\string~}Item}}
+\index{````~Item@{\texorpdfstring{$\sim$}{\string~}Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Item()}{\string~Item()}}
+{\footnotesize\ttfamily \label{class_item_af11f5c0709f76d8683d95d8476be85a4} 
+virtual Item\+::\texorpdfstring{$\sim$}{\string~}\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Método destructor de \doxylink{class_item}{Item}. 
+
+El destructor es virtual para que instancias de subclases de item que se encuentren bajo referencias o punteros de clase \doxylink{class_item}{Item} puedan ser destruidos correctamente. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_item_a99d759922a606b9338e3ef6c21446758}\index{Item@{Item}!getCantidad@{getCantidad}}
+\index{getCantidad@{getCantidad}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getCantidad()}{getCantidad()}}
+{\footnotesize\ttfamily \label{class_item_a99d759922a606b9338e3ef6c21446758} 
+int Item\+::get\+Cantidad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna valor entero Cantidad asociado a \doxylink{class_item}{Item}. 
+
+Cantidad representa la cantidad de Items disponibles por instancia.
+
+\begin{DoxyReturn}{Returns}
+Cantidad disponible de \doxylink{class_item}{Item}. 
+\end{DoxyReturn}
+\Hypertarget{class_item_a74b41f137200eea8fcdeb26bba0a332b}\index{Item@{Item}!getId@{getId}}
+\index{getId@{getId}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_item_a74b41f137200eea8fcdeb26bba0a332b} 
+int Item\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna valor entero Id asociado a \doxylink{class_item}{Item}. 
+
+Id es un identificador numérico para cada \doxylink{class_item}{Item}.
+
+\begin{DoxyReturn}{Returns}
+Id de \doxylink{class_item}{Item}. 
+\end{DoxyReturn}
+\Hypertarget{class_item_ae5b21a848afb89bd406a5e8d11890f1a}\index{Item@{Item}!getNombre@{getNombre}}
+\index{getNombre@{getNombre}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getNombre()}{getNombre()}}
+{\footnotesize\ttfamily \label{class_item_ae5b21a848afb89bd406a5e8d11890f1a} 
+std\+::string Item\+::get\+Nombre (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna string Nombre asociado a \doxylink{class_item}{Item}. 
+
+Nombre es el string que identifica a cada \doxylink{class_item}{Item}.
+
+\begin{DoxyReturn}{Returns}
+Nombre de \doxylink{class_item}{Item}. 
+\end{DoxyReturn}
+\Hypertarget{class_item_ae5cca050e4d2a5dda2c5116dc9b37537}\index{Item@{Item}!getTipo@{getTipo}}
+\index{getTipo@{getTipo}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getTipo()}{getTipo()}}
+{\footnotesize\ttfamily \label{class_item_ae5cca050e4d2a5dda2c5116dc9b37537} 
+std\+::string Item\+::get\+Tipo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna string Tipo asociado a \doxylink{class_item}{Item}. 
+
+Tipo es el string que identifica a qué subclase de \doxylink{class_item}{Item} pertenece la instancia derivada de \doxylink{class_item}{Item} (\doxylink{class_juguete}{Juguete}, \doxylink{class_comida}{Comida} o \doxylink{class_medicina}{Medicina}).
+
+\begin{DoxyReturn}{Returns}
+Tipo (subclase) de \doxylink{class_item}{Item}. 
+\end{DoxyReturn}
+\Hypertarget{class_item_a146124c3120b5db01ce78f41c226b45b}\index{Item@{Item}!mostrarItem@{mostrarItem}}
+\index{mostrarItem@{mostrarItem}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{mostrarItem()}{mostrarItem()}}
+{\footnotesize\ttfamily \label{class_item_a146124c3120b5db01ce78f41c226b45b} 
+void Item\+::mostrar\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Muestra representación de \doxylink{class_item}{Item} en consola. 
+
+Muestra salida en consola/terminal listado de atributos de instancia de subclase de \doxylink{class_item}{Item}. \Hypertarget{class_item_a505f8256e08508d6d3ef04c0dbf06380}\index{Item@{Item}!setCantidad@{setCantidad}}
+\index{setCantidad@{setCantidad}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setCantidad()}{setCantidad()}}
+{\footnotesize\ttfamily \label{class_item_a505f8256e08508d6d3ef04c0dbf06380} 
+void Item\+::set\+Cantidad (\begin{DoxyParamCaption}\item[{int}]{nueva\+Cantidad}{}\end{DoxyParamCaption})}
+
+
+
+Cambia el valor de Cantidad asociada a \doxylink{class_item}{Item}. 
+
+Cantidad representa la cantidad de Items disponibles por instancia.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nueva\+Cantidad} & Número entero que reemplazará valor de Cantidad. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_item_a1e17387adb2f25fbab12a2d4eecdfdfd}\index{Item@{Item}!usar@{usar}}
+\index{usar@{usar}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{usar()}{usar()}}
+{\footnotesize\ttfamily \label{class_item_a1e17387adb2f25fbab12a2d4eecdfdfd} 
+virtual void Item\+::usar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mascota}{Mascota}} \&}]{mascota}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Consume \doxylink{class_item}{Item} en \doxylink{class_mascota}{Mascota}, afectando sus estadísticas. 
+
+Al consumir\+: "{}cantidad"{} -\/= 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mascota} & \doxylink{class_mascota}{Mascota} que consume el \doxylink{class_item}{Item}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_comida_a2828fba03d6f5637456e137097902115}{Comida}}, \mbox{\hyperlink{class_juguete_afb192730206284bcbf66d47becbc5f12}{Juguete}}, and \mbox{\hyperlink{class_medicina_acf3938b79874986b9822a0576070f21a}{Medicina}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tarea-\/3/headers/Item.\+h\end{DoxyCompactItemize}

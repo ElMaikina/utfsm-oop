@@ -1,0 +1,49 @@
+\doxysection{Mascota.\+h}
+\hypertarget{_mascota_8h_source}{}\label{_mascota_8h_source}\index{tarea-\/3/headers/Mascota.h@{tarea-\/3/headers/Mascota.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MASCOTA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MASCOTA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAX\_STATS\ 100}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MIN\_STATS\ 0}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MAX\_EDAD\ \ 15}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mascota}{Mascota}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_juguete}{Juguete}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_comida}{Comida}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_medicina}{Medicina}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum}\ Estado\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ NEUTRO,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ FELIZ,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ TRISTE,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ HAMBRIENTO,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ ENOJADO,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CANSADO,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ MUERTO}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ nombre;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ edad;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ salud;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ energia;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ felicidad;}
+\DoxyCodeLine{00031\ \ \ \ \ Estado\ estado;}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_mascota}{Mascota}}(std::string\ nombre,\ \textcolor{keywordtype}{int}\ salud=50,\ \textcolor{keywordtype}{int}\ energia=50,\ \textcolor{keywordtype}{int}\ felicidad=50);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ mostrarMascota()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ penalizar();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ actualizarEstado();}
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ estadoString()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ dormir();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ pasarTiempo();}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MASCOTA\_H}}
+
+\end{DoxyCode}
