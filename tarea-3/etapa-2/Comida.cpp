@@ -3,24 +3,25 @@
 #include "../headers/Comida.h"
 #include "../headers/Mascota.h"
 
-Comida::Comida(int i, std::string n, int c) : Item(i, "Comida", n, c) {}
-void Comida::usarItem(Mascota &mascota) {
-	if (getCant() > 0) {
-		std::cout << "Usando " << tipo << " " << nombre << " en la Mascota" << std::endl;
+using std::string;
+using std::cout;
+using std::endl;
 
-		int newSalud = mascota.getSalud() + 20;
-		int newEnergia = mascota.getEnergia() + 20;
+Comida::Comida(int id, string nombre, int cantidad) : Item(id, "Comida", nombre, cantidad) {}
 
-		if (newSalud > MAX_STATS) {newSalud = MAX_STATS;}
-		if (newEnergia > MAX_STATS) {newEnergia = MAX_STATS;}
+void Comida::usar(Mascota &mascota) {
+    cout << "Usando comida: " << getNombre() << " en la mascota" << endl;
 
-		mascota.setSalud(newSalud);
-		mascota.setEnergia(newEnergia);
-		cantidad--;
-		mascota.mostrarMascota();
-	}
-	else {
-		std::cout << "No queda mas " << tipo << " " << nombre << "..." << std::endl;
-	}
-} 
+    mascota.salud += 20;
+    if (mascota.salud > MAX_STATS) {
+        mascota.salud = MAX_STATS;
+    }
+    
+    mascota.energia += 20;
+    if (mascota.energia > MAX_STATS) {
+        mascota.energia = MAX_STATS;
+    }
+
+    cantidad--;
+}
 
