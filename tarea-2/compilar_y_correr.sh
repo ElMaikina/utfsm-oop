@@ -1,1 +1,0 @@
-javac --module-path /usr/lib/jvm/java-22-openjfx/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics App.java && java --module-path /usr/lib/jvm/java-22-openjfx/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics App
