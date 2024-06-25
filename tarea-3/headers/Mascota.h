@@ -35,8 +35,7 @@ public:
     void mostrarMascota() const;
     void penalizar();
     void actualizarEstado();
-    std::string estadoString() const;
-    void dormir();
+    std::string getEstado() const;
     void pasarTiempo();
 };
 

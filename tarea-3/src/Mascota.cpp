@@ -37,13 +37,6 @@ void Mascota::penalizar(){
     }
 }
 
-void Mascota::dormir(){
-    salud += 15;
-    if(salud>100){salud=100;}
-        felicidad += 15;
-    if(felicidad>100){felicidad=100;}
-        energia = 100;
-}
 
 void Mascota::pasarTiempo(){
     if(salud>100){
@@ -91,7 +84,7 @@ void Mascota::actualizarEstado(){
     }
 }
 
-string Mascota::estadoString() const {
+string Mascota::getEstado() const {
     switch (estado) {
         case NEUTRO:
             return "Neutro";
@@ -117,7 +110,7 @@ void Mascota::mostrarMascota() const{
     << "\nSalud: "     << salud     
     << "\nEnergía: "   << energia
     << "\nFelicidad: " << felicidad 
-    << "\nEstado: "    << estadoString()
+    << "\nEstado: "    << getEstado()
     << "\n" 
     << endl;
 }
