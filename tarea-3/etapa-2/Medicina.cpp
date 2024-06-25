@@ -1,25 +1,24 @@
-#include <iostream>
-#include <string>
-#include "../headers/Medicina.h"
 #include "../headers/Mascota.h"
+#include "../headers/Juguete.h"
+#include "../headers/Comida.h"
+#include "../headers/Medicina.h"
+#include <iostream>
 
-Medicina::Medicina(int i, std::string n, int c) : Item(i, "Medicina", n, c) {}
-void Medicina::usarItem(Mascota &mascota) {
-	//std::cout << "Usando " << tipo << " " << nombre << " en la Mascota" << std::endl;
-	//mascota.mostrarMascota();
-	if (getCant() > 0) {
-		std::cout << "Usando " << tipo << " " << nombre << " en la Mascota" << std::endl;
+using std::string;
+using std::cout;
+using std::endl;
 
-		int newSalud = mascota.getSalud() + 40;
 
-		if (newSalud > MAX_STATS) {newSalud = MAX_STATS;}
+Medicina::Medicina(int id, string nombre, int cantidad) : Item(id, "Medicina", nombre, cantidad) {}
 
-		mascota.setSalud(newSalud);
-		cantidad--;
-		mascota.mostrarMascota();
-	}
-	else {
-		std::cout << "No queda mas " << tipo << " " << nombre << "..." << std::endl;
-	}
-} 
+void Medicina::usar(Mascota &mascota) {
+    cout << "Usando medicina: " << getNombre() << " en la mascota\n" << endl;
+
+    mascota.salud += 40;
+    if (mascota.salud > MAX_STATS) {
+        mascota.salud = MAX_STATS;
+    }
+
+    cantidad --;
+}
 
