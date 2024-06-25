@@ -2,28 +2,29 @@
 #define MASCOTA_H
 
 #include <string>
-#include "../headers/Item.h"
 
 #define MAX_STATS 100
 #define MIN_STATS 0
 #define MAX_EDAD  15
 
-enum Estado {
-	NEUTRO,
-	FELIZ,
-	TRISTE,
-	HAMBRIENTO,
-	ENOJADO,
-	CANSADO,
-	MUERTO
-};
+class Inventario;
 class Mascota {
 
 friend class Juguete;
 friend class Comida;
 friend class Medicina;
+friend void leerMascota(const std::string& nombreArchivo, Mascota &mascota, Inventario &inventario);
 
 private:
+    enum Estado {
+        NEUTRO,
+        FELIZ,
+        TRISTE,
+        HAMBRIENTO,
+        ENOJADO,
+        CANSADO,
+        MUERTO
+    };
     std::string nombre;
     float edad;
     int salud;
@@ -32,21 +33,11 @@ private:
     Estado estado;
     
 public:
-	Mascota(std::string n);
-	~Mascota();
-    Estado getEstado();
-    int getSalud();
-    int getEnergia();
-    int getFelicidad();
-    void setSalud(int s);
-    void setEnergia(int e);
-    void setFelicidad(int f);
-    void mostrarMascota();
+    Mascota(std::string nombre="NN", int salud=50, int energia=50, int felicidad=50);
+    void mostrarMascota() const;
     void penalizar();
     void actualizarEstado();
-    void printEstado();
-    void dormir();
-	void usarItem(Item i);
+    std::string getEstado() const;
     void pasarTiempo();
 };
 
