@@ -17,7 +17,7 @@ Mascota::Mascota(string nombre, int salud, int energia, int felicidad) :
 }
 
 void Mascota::penalizar(){
-    if (edad<=5 && salud >=10){
+    if (edad<=5 && salud <=10){
         felicidad-=20;
     }
     if (5<edad && edad<=10 && salud<=50){
