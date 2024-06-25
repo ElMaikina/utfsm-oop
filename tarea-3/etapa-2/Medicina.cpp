@@ -1,6 +1,4 @@
 #include "../headers/Mascota.h"
-#include "../headers/Juguete.h"
-#include "../headers/Comida.h"
 #include "../headers/Medicina.h"
 #include <iostream>
 
