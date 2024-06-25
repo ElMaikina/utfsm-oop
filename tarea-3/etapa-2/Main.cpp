@@ -67,7 +67,7 @@ void leerMascota(const std::string& nombreArchivo, Mascota &mascota, Inventario 
 
 int main(int argc, char **argv) {
     //Nombre del archivo CSV
-    std::string nombreArchivo = "../config.csv";
+    std::string nombreArchivo = "config.csv";
 
     Mascota mascota;
     Inventario inventario(mascota);
