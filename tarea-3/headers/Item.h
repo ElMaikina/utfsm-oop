@@ -26,6 +26,7 @@ private:
     /** Nombre de Item. */
     std::string nombre;
 
+protected:
     /** Cantidad de Item. */
     int cantidad;
     
