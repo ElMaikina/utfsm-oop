@@ -7,11 +7,13 @@
 #define MIN_STATS 0
 #define MAX_EDAD  15
 
+class Inventario;
 class Mascota {
 
 friend class Juguete;
 friend class Comida;
 friend class Medicina;
+friend void leerMascota(const std::string& nombreArchivo, Mascota &mascota, Inventario &inventario);
 
 private:
     enum Estado {
@@ -31,7 +33,7 @@ private:
     Estado estado;
     
 public:
-    Mascota(std::string nombre, int salud=50, int energia=50, int felicidad=50);
+    Mascota(std::string nombre="NN", int salud=50, int energia=50, int felicidad=50);
     void mostrarMascota() const;
     void penalizar();
     void actualizarEstado();
