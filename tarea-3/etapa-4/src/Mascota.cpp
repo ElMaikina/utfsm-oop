@@ -107,6 +107,8 @@ string Mascota::estadoString() const {
             return "Cansado";
         case MUERTO:
             return "Muerto";
+        default:
+            return "Neutro";
     }
 }
 
