@@ -35,6 +35,8 @@ void Comida::usar(Mascota &mascota) {
     if (mascota.energia > MAX_STATS) {
         mascota.energia = MAX_STATS;
     }
+
+    cantidad--;
 }
 
 
@@ -47,4 +49,6 @@ void Medicina::usar(Mascota &mascota) {
     if (mascota.salud > MAX_STATS) {
         mascota.salud = MAX_STATS;
     }
+
+    cantidad --;
 }

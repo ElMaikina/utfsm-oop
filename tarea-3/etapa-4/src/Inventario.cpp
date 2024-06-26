@@ -1,39 +1,48 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "../headers/Item.h"
+#include "../headers/Inventario.h"
 
-// Definición de la clase Inventario
-class Inventario {
-private:
-    Item* items;    // Arreglo dinámico de objetos Item
-    int capacidad;  // Capacidad máxima del inventario
-    int cantidad;   // Cantidad actual de elementos en el inventario
+Inventario::Inventario(Mascota &mascota) : mascota(mascota) 
+{}
 
-public:
-    // Constructor
-    Inventario(int c) {
-        capacidad = c;
-        items = new Item[c];
-        cantidad = 0;
-    }
+Inventario::~Inventario() {
+    for (Item *item : items) {
+		delete item;
+	}
+}
 
-    // Destructor para liberar la memoria del arreglo dinámico
-    ~Inventario() {
-        delete[] items;
-    }
+void Inventario::agregarItem(Item *item) {
+    items.push_back(item);
+}
 
-    // Método para agregar un nuevo item al inventario
-    void agregarItem(const Item& item) {
-        if (cantidad < capacidad) {
-            items[cantidad] = item;
-            cantidad++;
-        }
-    }
+Item * Inventario::buscarPorID(int id) {
+	for (Item *item : items) {
+		if (item->getId() == id)
+		    return item;
+	}
+	return NULL;
+}
 
-    // Método para imprimir todos los items del inventario
-    void mostrarInventario() {
-        for(int i = 0; i < cantidad; i++) {
-            items[i].mostrarItem();
-        }
-    }
+void Inventario::usarItem(int id, Mascota &mascota) {
+	Item *item = buscarPorID(id);
+    item->usar(mascota);
+
+	int index = 0;
+	for (Item *item : items) {
+		if (item->getId() == id)
+            break;
+		index++;
+	}
+
+	if (item->getCantidad() == 0) {
+		items.erase(items.begin() + index);
+	}
+}
+
+void Inventario::mostrarInventario() const{
+	for (Item *item : items) {
+		item->mostrarItem();
+	}
 };
