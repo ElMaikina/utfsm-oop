@@ -5,8 +5,11 @@
 class Juguete : public Item { 
 
 public:
-    Juguete(int i, std::string n);
-    void usarItem(Mascota &mascota) override;
+    Juguete(int id, std::string nombre);
+
+    ~Juguete() override = default;
+
+    void usar(Mascota &mascota) override;
 };
 
 #endif //JUGUETE_H

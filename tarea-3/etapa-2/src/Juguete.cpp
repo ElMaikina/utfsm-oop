@@ -1,19 +1,22 @@
-#include <iostream>
-#include <string>
-#include "../headers/Juguete.h"
 #include "../headers/Mascota.h"
+#include "../headers/Juguete.h"
+#include "../headers/Comida.h"
+#include "../headers/Medicina.h"
+#include <iostream>
 
-Juguete::Juguete(int i, std::string n) : Item(i, "Juguete", n, -1) {}
-void Juguete::usarItem(Mascota &mascota) {
-	//std::cout << "Usando " << tipo << " " << nombre << " en la Mascota" << std::endl;
-	//mascota.mostrarMascota();
-	std::cout << "Usando " << tipo << " " << nombre << " en la Mascota" << std::endl;
+using std::string;
+using std::cout;
+using std::endl;
 
-	int newFelicidad = mascota.getFelicidad() + 30;
 
-	if (newFelicidad > MAX_STATS) {newFelicidad = MAX_STATS;}
+Juguete::Juguete(int id, string nombre) : Item(id, "Juguete", nombre) {}
 
-	mascota.setFelicidad(newFelicidad);
-	mascota.mostrarMascota();
-} 
+void Juguete::usar(Mascota &mascota) {
+    cout << "Usando juguete: " << getNombre() << " en la mascota" << endl;
+
+    mascota.felicidad += 30;
+    if (mascota.felicidad > MAX_STATS) {
+        mascota.felicidad = MAX_STATS;
+    }
+}
 
