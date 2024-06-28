@@ -5,11 +5,11 @@
 class Juguete : public Item { 
 
 public:
-    Juguete(int id, std::string nombre);
+    Juguete(int id, std::string nombre);/** Constructor de juguete */
 
-    ~Juguete() override = default;
+    ~Juguete() override = default;/** Destructor de juguete */
 
-    void usar(Mascota &mascota) override;
+    void usar(Mascota &mascota) override; /** Funcion para usar juguete*/
 };
 
 #endif //JUGUETE_H
