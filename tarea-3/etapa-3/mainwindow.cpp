@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(600,410);
     this->setWindowTitle("Perrito");
 
-    QPixmap pix(":/resource/img/dog.jpg");
+    QPixmap pix(":/resource/img/goldie.jpg");
     QPixmap j1(":/resource/img/bone.jpg");
     QPixmap j2(":/resource/img/ball.jpg");
 
