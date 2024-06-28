@@ -5,11 +5,11 @@
 class Comida : public Item { 
 
 public:
-    Comida(int id, std::string nombre, int cantidad);
+    Comida(int id, std::string nombre, int cantidad);/**Constructor Comida */
 
-    ~Comida() override = default;
+    ~Comida() override = default;/**Destructor Comida */
 
-    void usar(Mascota &mascota) override;
+    void usar(Mascota &mascota) override;/** Funcion para utilizar alimentar a la mascota*/
 };
 
 #endif //COMIDA_H
