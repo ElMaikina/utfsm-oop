@@ -109,7 +109,7 @@ int main(int argc, char **argv) {
 		// A continuacion revisa las condiciones de muerte
 		
 		// Si el Pou esta muerto terminar el juego
-		if (mascota.getEstado() == "MUERTO") {
+		if (mascota.getEstado() == "Muerto") {
         	std::cout << "La Mascota falleció..." << std::endl;
 			mascota.mostrarMascota();
 			playing = false;
