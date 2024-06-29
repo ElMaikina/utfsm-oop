@@ -5,8 +5,7 @@
 #include "Item.h"
 #include "Mascota.h" 
 
-/* @class Inventario 
-@brief Definición de la clase Inventario */
+// Definición de la clase Inventario
 class Inventario {
 private:
 	std::vector<Item*> items;
@@ -14,34 +13,25 @@ private:
 
 public:
     // Constructor
-    Inventario(Mascota &mascota);/*@brief Constructor de inventario 
-    @param &mascota	puntero a la mascota
-    */
+    Inventario(Mascota &mascota);
 
     // Destructor
-    ~Inventario();/*@brief destructor */
+    ~Inventario();
 
     // Método para agregar un nuevo item al inventario
-    void agregarItem(Item *item);/* @brief Agrega un item al inventario 
-    @param *item	Operador punterio de item	
-    */
+    void agregarItem(Item *item);
 
     // Método para buscar Item por ID
-    Item * buscarPorID(int id);/* @brief busca el item por id numerico 
-    @param id	id numerico del item
-    */
+    Item * buscarPorID(int id);
 
     // Método para usar un nuevo item del inventario
-    void usarItem(int id, Mascota &mascota); /* @brief utiliza un Item del inventario 
-@param id	id numerico del item
-@param &mascota	referencia a la mascota
-*/
+    void usarItem(int id, Mascota &mascota);
 
-        // Retorna inventario.items
+    // Retorna inventario.items
     std::vector<Item*> getItems();
 
     // Método para imprimir todos los items del inventario
-    void mostrarInventario() const;/*@brief imprime todos los item del inventario*/
+    void mostrarInventario() const;
 };
 
 #endif // INVENTARIO_H
