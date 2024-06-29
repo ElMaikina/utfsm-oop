@@ -1,7 +1,7 @@
-#include "../headers/Mascota.h"
-#include "../headers/Juguete.h"
-#include "../headers/Comida.h"
-#include "../headers/Medicina.h"
+#include "../game_headers/Mascota.h"
+#include "../game_headers/Juguete.h"
+#include "../game_headers/Comida.h"
+#include "../game_headers/Medicina.h"
 #include <iostream>
 
 using std::string;

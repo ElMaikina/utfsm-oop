@@ -1,4 +1,4 @@
-#include "../headers/Mascota.h"
+#include "../game_headers/Mascota.h"
 #include <iostream>
 
 using std::string;

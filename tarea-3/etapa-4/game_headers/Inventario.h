@@ -37,6 +37,9 @@ public:
 @param &mascota	referencia a la mascota
 */
 
+        // Retorna inventario.items
+    std::vector<Item*> getItems();
+
     // Método para imprimir todos los items del inventario
     void mostrarInventario() const;/*@brief imprime todos los item del inventario*/
 };

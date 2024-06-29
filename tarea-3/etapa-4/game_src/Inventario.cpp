@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../headers/Item.h"
-#include "../headers/Inventario.h"
+#include "../game_headers/Item.h"
+#include "../game_headers/Inventario.h"
 
 Inventario::Inventario(Mascota &mascota) : mascota(mascota) 
 {}
@@ -39,6 +39,10 @@ void Inventario::usarItem(int id, Mascota &mascota) {
 	if (item->getCantidad() == 0) {
 		items.erase(items.begin() + index);
 	}
+}
+
+std::vector<Item*> Inventario::getItems() {
+    return items;
 }
 
 void Inventario::mostrarInventario() const{
