@@ -13,7 +13,7 @@ SOURCES += main.cpp \
     game_src/Inventario.cpp \
     game_src/Mascota.cpp \
     game_src/Item.cpp \
-    game_src/Items.cpp
+    game_src/Items.cpp \
 
 
 HEADERS += mainwindow.h \

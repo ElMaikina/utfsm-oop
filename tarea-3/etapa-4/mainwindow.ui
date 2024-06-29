@@ -14,12 +14,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QProgressBar" name="healthBar">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>100</y>
-      <width>118</width>
+      <width>151</width>
       <height>23</height>
      </rect>
     </property>
@@ -30,7 +30,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="SALUD">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -43,7 +43,7 @@
      <string>Salud</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="ENERGIA">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -56,12 +56,12 @@
      <string>Energia</string>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar_2">
+   <widget class="QProgressBar" name="energyBar">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>150</y>
-      <width>118</width>
+      <width>151</width>
       <height>23</height>
      </rect>
     </property>
@@ -72,12 +72,12 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar_3">
+   <widget class="QProgressBar" name="joyBar">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>200</y>
-      <width>118</width>
+      <width>151</width>
       <height>23</height>
      </rect>
     </property>
@@ -88,7 +88,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="FELICIDAD">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -101,7 +101,7 @@
      <string>Felicidad</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="ESTADO">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -114,12 +114,12 @@
      <string>Estado</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="stateLabel">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>240</y>
-      <width>101</width>
+      <width>211</width>
       <height>61</height>
      </rect>
     </property>
@@ -132,26 +132,26 @@
      <string>Neutro</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="foodButton1">
     <property name="geometry">
      <rect>
       <x>140</x>
       <y>300</y>
       <width>71</width>
-      <height>24</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Leche</string>
+     <string>---</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Hueso">
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>290</y>
+      <y>330</y>
       <width>51</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
    </widget>
@@ -159,69 +159,69 @@
     <property name="geometry">
      <rect>
       <x>540</x>
-      <y>290</y>
+      <y>320</y>
       <width>51</width>
       <height>51</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="foodButton3">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>300</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>---</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="foodButton2">
     <property name="geometry">
      <rect>
       <x>250</x>
       <y>300</y>
       <width>71</width>
-      <height>24</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Arroz</string>
+     <string>---</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="medButton2">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>340</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>---</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="medButton1">
     <property name="geometry">
      <rect>
       <x>140</x>
       <y>340</y>
       <width>71</width>
-      <height>24</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Carne</string>
+     <string>---</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QLabel" name="INVENTARIO">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>340</y>
-      <width>71</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Jarabe</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_10">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>300</y>
-      <width>71</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Pasitillas</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>270</y>
+      <x>50</x>
+      <y>350</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -232,7 +232,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Inventario</string>
+     <string>MEDICINA</string>
     </property>
    </widget>
    <widget class="QLabel" name="Mascota">
@@ -248,7 +248,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="NOMBRE">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -261,7 +261,7 @@
      <string>Nombre:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="EDAD">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -274,7 +274,7 @@
      <string>Edad:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="ageLabel">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -287,7 +287,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_10">
+   <widget class="QLabel" name="nameLabel">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -300,11 +300,11 @@
      <string>NOMBRE</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_11">
+   <widget class="QLabel" name="JUGUETES">
     <property name="geometry">
      <rect>
       <x>500</x>
-      <y>260</y>
+      <y>300</y>
       <width>81</width>
       <height>20</height>
      </rect>
@@ -313,7 +313,7 @@
      <string>Juguetes</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_12">
+   <widget class="QLabel" name="foodLabel1">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -326,7 +326,46 @@
      <string>4</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_13">
+   <widget class="QLabel" name="foodLabel3">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>300</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="medLabel2">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>350</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="medLabel1">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>350</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="foodLabel2">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -339,43 +378,43 @@
      <string>4</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_14">
+   <widget class="QPushButton" name="medButton3">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>360</x>
       <y>340</y>
-      <width>31</width>
-      <height>20</height>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>---</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="medLabel3">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>350</y>
+      <width>58</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>4</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_15">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>60</x>
       <y>300</y>
-      <width>31</width>
+      <width>81</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>4</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_16">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>340</y>
-      <width>31</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>4</string>
+     <string>COMIDA </string>
     </property>
    </widget>
   </widget>

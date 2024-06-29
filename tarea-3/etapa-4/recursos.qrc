@@ -3,5 +3,6 @@
         <file>img/dog.jpg</file>
         <file>img/ball.jpg</file>
         <file>img/bone.jpg</file>
+        <file>config.csv</file>
     </qresource>
 </RCC>
