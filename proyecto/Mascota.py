@@ -1,7 +1,21 @@
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtSql import *
+from PyQt6.QtWidgets import *
 import Estado
+import random
+import sys
 
-class Mascota:
-    def __init__(self, nombre, salud, energia, felicidad):
+class Mascota(QLabel):
+    def __init__(self, parent, nombre, salud, energia, felicidad):
+        super().__init__(parent)
+        # Atributos graficos
+        self.setPixmap(QPixmap('baby_pou.png'))
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.move_randomly)
+        self.timer.start(random.randint(200, 1000))
+        self.move_randomly()
+        # Atributos logicos
         self.nombre = nombre
         self.salud = salud
         self.energia = energia
@@ -9,7 +23,17 @@ class Mascota:
         self.edad = 0
         self.estado = Estado.NEUTRO
         self.actualizar_estado()
+    
+    def move_randomly(self):
+        window_width = self.parent().width()
+        window_height = self.parent().height()
+        pet_width = self.width()
+        pet_height = self.height()
+        new_x = random.randint(0, window_width - pet_width)
+        new_y = random.randint(0, window_height - pet_height)
+        self.move(new_x, new_y)
 
+        
     def penalizar(self):
         if self.edad <= 5 and self.salud <= 10:
             self.felicidad -= 20
