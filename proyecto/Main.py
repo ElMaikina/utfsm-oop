@@ -18,6 +18,18 @@ class MovingPetsWindow(QWidget):
     def initUI(self):
         self.setWindowTitle('Granja de Pou')
         self.setGeometry(100, 100, width, height)
+
+        # Establecer el layout para la ventana
+        self.layout = QVBoxLayout()
+        self.setLayout(self.layout)
+
+        # Crear y configurar la etiqueta para la imagen de fondo
+        self.background_label = QLabel(self)
+        self.background_pixmap = QPixmap('background.jpg')  # Reemplaza 'background.jpg' con la ruta a tu imagen de fondo
+        self.background_label.setPixmap(self.background_pixmap)
+        self.background_label.setGeometry(0, 0, self.width(), self.height())
+        self.background_label.lower()  # Enviar la etiqueta al fondo
+
         # Lista para mantener las mascotas
         self.pets = []
         
