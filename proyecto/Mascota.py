@@ -1,11 +1,4 @@
-class Estado:
-    NEUTRO = "Neutro"
-    FELIZ = "Feliz"
-    TRISTE = "Triste"
-    HAMBRIENTO = "Hambriento"
-    ENOJADO = "Enojado"
-    CANSADO = "Cansado"
-    MUERTO = "Muerto"
+import Estado
 
 class Mascota:
     def __init__(self, nombre, salud, energia, felicidad):
@@ -82,11 +75,3 @@ class Mascota:
         print(f"Felicidad: {self.felicidad}")
         print(f"Estado: {self.get_estado()}")
         print()
-
-# Ejemplo de uso
-mascota = Mascota("Fido", 80, 70, 90)
-mascota.mostrar_mascota()
-mascota.pasar_tiempo()
-mascota.penalizar()
-mascota.actualizar_estado()
-mascota.mostrar_mascota()
