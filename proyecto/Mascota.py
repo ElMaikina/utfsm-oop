@@ -4,10 +4,9 @@ from PyQt6.QtSql import *
 from PyQt6.QtWidgets import *
 import Estado
 import random
-import sys
 
 class Mascota(QLabel):
-    def __init__(self, parent, nombre, salud, energia, felicidad):
+    def __init__(self, parent, nombre, salud, energia, felicidad, personalidad):
         super().__init__(parent)
         # Atributos graficos
         self.setPixmap(QPixmap('baby_pou.png'))
@@ -22,6 +21,8 @@ class Mascota(QLabel):
         self.felicidad = felicidad
         self.edad = 0
         self.estado = Estado.NEUTRO
+        self.personalidad = personalidad
+
         self.actualizar_estado()
         self.mostrar_mascota()
     
@@ -91,6 +92,9 @@ class Mascota(QLabel):
     def get_estado(self):
         return self.estado
 
+    def get_person(self):
+        return self.personalidad
+
     def mostrar_mascota(self):
         print(f"Nombre: {self.nombre}")
         print(f"Edad: {self.edad}")
@@ -98,4 +102,5 @@ class Mascota(QLabel):
         print(f"Energía: {self.energia}")
         print(f"Felicidad: {self.felicidad}")
         print(f"Estado: {self.get_estado()}")
+        print(f"Personalidad: {self.get_person()}")
         print()
