@@ -13,7 +13,7 @@ class Mascota(QLabel):
         self.setPixmap(QPixmap('baby_pou.png'))
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.move_randomly)
-        self.timer.start(random.randint(200, 1000))
+        self.timer.start(random.randint(800, 1000))
         self.move_randomly()
         # Atributos logicos
         self.nombre = nombre
@@ -23,6 +23,7 @@ class Mascota(QLabel):
         self.edad = 0
         self.estado = Estado.NEUTRO
         self.actualizar_estado()
+        self.mostrar_mascota()
     
     def move_randomly(self):
         window_width = self.parent().width()
@@ -32,7 +33,6 @@ class Mascota(QLabel):
         new_x = random.randint(0, window_width - pet_width)
         new_y = random.randint(0, window_height - pet_height)
         self.move(new_x, new_y)
-
         
     def penalizar(self):
         if self.edad <= 5 and self.salud <= 10:
