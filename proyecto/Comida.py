@@ -1,9 +1,10 @@
-class Comida(Item):
+from Item import Item
 
+class Comida(Item):
     def __init__(self, id, nombre, cantidad):
         super().__init__(id, "Comida", nombre, cantidad)
 
-    def usar(self, mascota):
+    def usar(self):
         if self._cantidad > 0:
             self._cantidad -= 1
         else:

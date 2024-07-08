@@ -1,5 +1,6 @@
-class Medicina(Item):
+from Item import Item
 
+class Medicina(Item):
     def __init__(self, id, nombre, cantidad):
         super().__init__(id, "Medicina", nombre, cantidad)
 

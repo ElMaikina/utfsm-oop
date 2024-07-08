@@ -1,5 +1,6 @@
-class Juguete(Item):
+from Item import Item
 
+class Juguete(Item):
     def __init__(self, id, nombre):
         super().__init__(id, "Juguete", nombre)
 

@@ -7,6 +7,10 @@ import sys
 
 # Clases internas
 from Mascota import Mascota
+from Medicina import Medicina
+from Juguete import Juguete
+from Comida import Comida
+from Item import Item
 import Personalidad as person
 import Nombres as name
 
