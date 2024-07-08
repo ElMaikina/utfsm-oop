@@ -4,6 +4,8 @@ from PyQt6.QtSql import *
 from PyQt6.QtWidgets import *
 import Estado
 import random
+import os
+
 
 class Mascota(QLabel):
     def __init__(self, parent, nombre, salud, energia, felicidad, personalidad):

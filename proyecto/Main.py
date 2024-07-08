@@ -1,13 +1,14 @@
+# Librerias externas
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtSql import *
 from PyQt6.QtWidgets import *
+import sys
 
+# Clases internas
 from Mascota import Mascota
 import Personalidad as person
 import Nombres as name
-import random
-import sys
 
 class MovingPetsWindow(QWidget):
     def __init__(self, width, height):
