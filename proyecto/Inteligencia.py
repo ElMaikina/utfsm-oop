@@ -1,5 +1,8 @@
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from transformers import GPT2LMHeadModel, GPT2Tokenizer, logging
 import torch
+
+# Establecer el nivel de logging de transformers a ERROR
+logging.set_verbosity_error()
 
 # Cargar el modelo GPT-2 y el tokenizer desde Hugging Face
 model_name = "gpt2"  # Puedes cambiar esto por otro modelo disponible en Hugging Face
@@ -11,7 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # Función para generar respuestas con el modelo GPT-2
-def generar_respuesta(prompt, max_length=150, num_return_sequences=1):
+def generar_respuesta(prompt, max_length=100, num_return_sequences=1):
     # Tokenizar la entrada
     inputs = tokenizer.encode(prompt, return_tensors="pt").to(device)
     
@@ -32,9 +35,12 @@ def generar_respuesta(prompt, max_length=150, num_return_sequences=1):
     return respuestas
 
 # Ejemplo de uso
-if __name__ == '__main__':
-    mensaje_usuario = "Say something happy"
+def leer_y_responder(mensaje_usuario):
     respuestas = generar_respuesta(mensaje_usuario)
-    partes = respuestas[-1].split('.')
-    frase = f"{partes[0].replace('\n', ' ').replace('[', '').replace(']', '').replace('\"', '')}"
-    print(frase)
+
+    respuesta_final = ''
+    for i, respuesta in enumerate(respuestas):
+        respuesta_final += str(respuesta)
+
+    #respuesta_formateada = respuestas[0].split(".")[0].split(",")[0].split("?")[1].split("\"")[0].split("\n")[-1]
+    return respuesta_final.replace(str(mensaje_usuario), '').split('\n')[-1]

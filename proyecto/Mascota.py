@@ -3,6 +3,7 @@ from PyQt6.QtGui import *
 from PyQt6.QtSql import *
 from PyQt6.QtWidgets import *
 import Personalidad as ps
+import Inteligencia as inte
 import Estado
 import random
 import os
@@ -10,13 +11,6 @@ import os
 class Mascota(QLabel):
     def __init__(self, parent, nombre, salud, energia, felicidad, personalidad):
         super().__init__(parent)
-        # Atributos graficos
-        self.setPixmap(QPixmap('baby_pou.png'))
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.move_randomly)
-        self.timer.start(random.randint(800, 1000))
-        self.move_randomly()
-        # Atributos logicos
         self.nombre = nombre
         self.salud = salud
         self.energia = energia
@@ -26,16 +20,12 @@ class Mascota(QLabel):
         self.personalidad = personalidad
         self.actualizar_estado()
         self.mostrar_mascota()
+        self.setPixmap(QPixmap('baby_pou.png'))
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.move_randomly)
+        self.timer.start(random.randint(800, 1000))
+        self.move_randomly()
     
-    def move_randomly(self):
-        window_width = self.parent().width()
-        window_height = self.parent().height()
-        pet_width = self.width()
-        pet_height = self.height()
-        new_x = random.randint(0, window_width - pet_width)
-        new_y = random.randint(0, window_height - pet_height)
-        self.move(new_x, new_y)
-        
     def penalizar(self):
         if self.edad <= 5 and self.salud <= 10:
             self.felicidad -= 20
@@ -93,9 +83,6 @@ class Mascota(QLabel):
     def get_estado(self):
         return self.estado
 
-    def get_person(self):
-        return self.personalidad
-
     def mostrar_mascota(self):
         print(f"Nombre: {self.nombre}")
         print(f"Edad: {self.edad}")
@@ -103,5 +90,20 @@ class Mascota(QLabel):
         print(f"Energía: {self.energia}")
         print(f"Felicidad: {self.felicidad}")
         print(f"Estado: {self.get_estado()}")
-        print(f"Personalidad: {self.get_person()}")
-        print()
+        print(f"Personalidad: {self.personalidad}")
+    
+    def move_randomly(self):
+        self.pasar_tiempo()
+        self.actualizar_estado()
+        window_width = self.parent().width()
+        window_height = self.parent().height()
+        pet_width = self.width()
+        pet_height = self.height()
+        new_x = random.randint(0, window_width - pet_width)
+        new_y = random.randint(0, window_height - pet_height)
+        adj = self.personalidad[0]
+        pers = self.personalidad[1]
+        prompt = f"You are {adj} and {pers}, you feel {self.get_estado()}, say something very brief in character"
+        print(f"{self.nombre} ({adj} | {self.get_estado()}): {str(inte.leer_y_responder(prompt))}")
+        self.move(new_x, new_y)
+    

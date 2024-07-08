@@ -37,7 +37,7 @@ class MovingPetsWindow(QWidget):
         personalities_df = person.load_personalities('personalidad.csv')
 
         # Añadir mascotas
-        cantidad_mascotas = 10
+        cantidad_mascotas = 5
         for _ in range(cantidad_mascotas):  # Cambia este valor para tener más o menos mascotas
             personality = person.get_random_personality(personalities_df)
             pet = Mascota(self, name.generate_name(), 100, 100, 100, personality)  # Reemplaza 'pet.png' con la ruta a tu imagen

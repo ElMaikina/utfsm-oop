@@ -1,7 +1,21 @@
 nombre,descripcion
-feliz,Siempre está alegre y busca compartir su felicidad.
-triste,A menudo está melancólico y reflexiona sobre la vida.
-curioso,Le encanta explorar y aprender cosas nuevas.
-gruñón,Tiene un temperamento difícil y se queja con frecuencia.
-juguetón,Siempre está buscando diversión y juegos.
-gracioso,Le encanta contar chistes y hacer reír a los demás.
+Optimistic,Always expects the best and sees the positive side of things.
+Pessimistic,Tends to anticipate the worst and see the negative side.
+Extroverted,Enjoys socializing and is very open with others.
+Introverted,Prefers solitude or small groups and is more reserved.
+Humorous,Has a good sense of humor and enjoys making others laugh.
+Serious,Takes things seriously and tends to be more formal.
+Empathetic,Able to understand and share the feelings of others.
+Indifferent,Shows no interest or concern for others.
+Generous,Willing to give and share with others without expecting anything in return.
+Selfish,Concerned primarily with one's own benefit and welfare.
+Adventurous,Likes to try new things and take risks.
+Cautious,Tends to be careful and avoids unnecessary risks.
+Brave,Not afraid to face challenges or difficult situations.
+Cowardly,Tends to be fearful in situations of danger or conflict.
+Creative,Has the ability to generate original and valuable ideas.
+Conservative,Prefers to keep things as they are and is reluctant to change.
+Hardworking,Dedicated and diligent in their tasks and responsibilities.
+Lazy,Tends to avoid work or effort whenever possible.
+Curious,Has a strong desire to learn or know more.
+Detached,Shows little or no interest in new or unknown things.
