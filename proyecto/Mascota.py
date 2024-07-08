@@ -2,10 +2,10 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtSql import *
 from PyQt6.QtWidgets import *
+import Personalidad as ps
 import Estado
 import random
 import os
-
 
 class Mascota(QLabel):
     def __init__(self, parent, nombre, salud, energia, felicidad, personalidad):
@@ -24,7 +24,6 @@ class Mascota(QLabel):
         self.edad = 0
         self.estado = Estado.NEUTRO
         self.personalidad = personalidad
-
         self.actualizar_estado()
         self.mostrar_mascota()
     

@@ -19,7 +19,6 @@ class MovingPetsWindow(QWidget):
     def initUI(self):
         self.setWindowTitle('Granja de Pou')
         self.setGeometry(100, 100, width, height)
-
         # Establecer el layout para la ventana
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
@@ -38,7 +37,8 @@ class MovingPetsWindow(QWidget):
         personalities_df = person.load_personalities('personalidad.csv')
 
         # Añadir mascotas
-        for _ in range(5):  # Cambia este valor para tener más o menos mascotas
+        cantidad_mascotas = 10
+        for _ in range(cantidad_mascotas):  # Cambia este valor para tener más o menos mascotas
             personality = person.get_random_personality(personalities_df)
             pet = Mascota(self, name.generate_name(), 100, 100, 100, personality)  # Reemplaza 'pet.png' con la ruta a tu imagen
             self.pets.append(pet)
