@@ -6,7 +6,6 @@ import Personalidad as ps
 import Inteligencia as inte
 import Estado
 import random
-import os
 
 class Mascota(QLabel):
     def __init__(self, parent, nombre, salud, energia, felicidad, personalidad):
@@ -23,9 +22,9 @@ class Mascota(QLabel):
         self.setPixmap(QPixmap('baby_pou.png'))
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.move_randomly)
-        self.timer.start(random.randint(800, 1000))
+        self.timer.start(random.randint(0, 100))
         self.move_randomly()
-    
+        
     def penalizar(self):
         if self.edad <= 5 and self.salud <= 10:
             self.felicidad -= 20
@@ -104,6 +103,7 @@ class Mascota(QLabel):
         adj = self.personalidad[0]
         pers = self.personalidad[1]
         prompt = f"You are {adj} and {pers}, you feel {self.get_estado()}, say something very brief in character"
-        print(f"{self.nombre} ({adj} | {self.get_estado()}): {str(inte.leer_y_responder(prompt))}")
+        output = str(inte.leer_y_responder(prompt))
+        print(f"{self.nombre} ({adj} | {self.get_estado()}): {output}")
         self.move(new_x, new_y)
     

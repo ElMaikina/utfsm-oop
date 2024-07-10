@@ -1,9 +1,6 @@
 from Item import Item
 from Mascota import Mascota
-from PyQt6.QtCore import *
-from PyQt6.QtGui import *
-from PyQt6.QtSql import *
-from PyQt6.QtWidgets import *
+
 
 class inventario(QLabel):
     def __init__(self, mascota):

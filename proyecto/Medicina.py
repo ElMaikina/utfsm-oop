@@ -1,7 +1,8 @@
 from Item import Item
 
 class Medicina(Item):
-    def __init__(self, id, nombre, cantidad):
+
+    def __init__(self, id, nombre, cantidad,imagen_path=None):
         super().__init__(id, "Medicina", nombre, cantidad)
 
     def usar(self, mascota):

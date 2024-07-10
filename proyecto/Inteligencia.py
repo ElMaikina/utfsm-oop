@@ -10,7 +10,11 @@ tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 model = GPT2LMHeadModel.from_pretrained(model_name)
 
 # Configurar el dispositivo para usar la GPU si está disponible
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+# Activar CUDA (Solo con graficas NVIDIA)
+device = torch.device('cuda')
+# Desactivar CUDA (Modela usando el procesador y es mucho mas lento)
+#device = torch.device('cpu')
 model.to(device)
 
 # Función para generar respuestas con el modelo GPT-2

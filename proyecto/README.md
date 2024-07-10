@@ -7,7 +7,21 @@
 - Joaquín Jara Hananías, Rol 202221028-1
 
 ## Requisitos
-Tener la ultima version de _Python_ (3.12) instalada, ademas de _pip_ y _PyQt6_
+Tener la ultima version de _Python_ (3.12) instalada y las siguientes librerias:
+
+```
+PyQt6
+torch
+transformers
+pandas
+```
+
+Si dispone de una tarjeta grafica _NVIDIA_ compatible con _CUDA_, se necesita instalar _toch_ con los siguientes argumentos:
+
+```
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
 
 ## Ejecución
 Ejecutar _python main.py_ desde la terminal de su preferencia, esto ejecutara el codigo.

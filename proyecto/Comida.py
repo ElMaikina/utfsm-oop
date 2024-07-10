@@ -1,7 +1,9 @@
 from Item import Item
 
+
 class Comida(Item):
-    def __init__(self, id, nombre, cantidad):
+
+    def __init__(self, id, nombre, cantidad,imagen_path=None):
         super().__init__(id, "Comida", nombre, cantidad)
 
     def usar(self):
