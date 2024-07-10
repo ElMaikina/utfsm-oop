@@ -37,6 +37,7 @@ class Mascota(QLabel):
         new_y = random.randint(0, window_height - pet_height)
         self.move(new_x, new_y)
         
+        
     def penalizar(self):
         if self.edad <= 5 and self.salud <= 10:
             self.felicidad -= 20

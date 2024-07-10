@@ -1,7 +1,10 @@
-class Juguete(Item):
+from Item import Item
+from PyQt6.QtWidgets import QLabel
+from PyQt6.QtGui import QPixmap
 
-    def __init__(self, id, nombre):
-        super().__init__(id, "Juguete", nombre)
+class Juguete(Item):
+    def __init__(self, id, nombre, cantidad=-1):
+        super().__init__(id, "Juguete", nombre, cantidad)
 
     def usar(self, mascota):
         if self._cantidad > 0:

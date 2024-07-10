@@ -7,12 +7,8 @@ class Item(ABC):
         self._nombre = nombre
         self._cantidad = cantidad
 
-    def __del__(self):
-        pass  # Destructor
-
     @abstractmethod
     def usar(self, mascota):
-        
         pass
 
     def mostrar_item(self):

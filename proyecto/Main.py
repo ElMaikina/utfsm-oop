@@ -4,11 +4,15 @@ from PyQt6.QtGui import *
 from PyQt6.QtSql import *
 from PyQt6.QtWidgets import *
 import sys
+import random
 
 # Clases internas
 from Mascota import Mascota
 import Personalidad as person
 import Nombres as name
+from Juguete import Juguete
+from juguete_fisico import JugueteWidget
+
 
 class MovingPetsWindow(QWidget):
     def __init__(self, width, height):
@@ -42,6 +46,15 @@ class MovingPetsWindow(QWidget):
             personality = person.get_random_personality(personalities_df)
             pet = Mascota(self, name.generate_name(), 100, 100, 100, personality)  # Reemplaza 'pet.png' con la ruta a tu imagen
             self.pets.append(pet)
+
+        for _ in range(5):
+            rid = random.randint(1, 100)
+            juguete = Juguete(rid, f"Juguete {rid}")
+            item_widget = JugueteWidget(self, juguete, imagen_path='juguete.png')  # Reemplaza 'juguete.png' con la ruta a tu imagen
+            x = random.randint(10, 1000)
+            y = random.randint(10,1000)
+            item_widget.move(x, y)
+            self.layout.addWidget(item_widget)
         
         self.show()
 
